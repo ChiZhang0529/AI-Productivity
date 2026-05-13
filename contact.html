@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>Contact Us | AI Productivity</title>
+  <meta name="title" content="Contact Us | AI Productivity">
+  <meta name="description" content="Get in touch with AI Productivity. We'd love to hear from you - whether you have a question, feedback, or want to collaborate on AI productivity content.">
+  <meta name="keywords" content="contact AI Productivity, AI blog feedback, collaboration, support">
+  <meta name="author" content="AI Productivity">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theainest.com/contact.html">
+  <meta property="og:title" content="Contact Us | AI Productivity">
+  <meta property="og:description" content="Get in touch with AI Productivity. We'd love to hear from you.">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://theainest.com/contact.html">
+  <meta property="twitter:title" content="Contact Us | AI Productivity">
+  <meta property="twitter:description" content="Get in touch with AI Productivity.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://theainest.com/contact.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#b9dffc',
+              300: '#7cc8fa',
+              400: '#36aaf5',
+              500: '#0e8de8',
+              600: '#0070c4',
+              700: '#01599f',
+              800: '#064b84',
+              900: '#0b3f6d',
+            },
+            dark: {
+              900: '#0a0a0f',
+              800: '#111118',
+              700: '#1a1a24',
+              600: '#22222e',
+              500: '#2a2a38',
+              400: '#333344',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0a0a0f; color: #e2e8f0; }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111118; }
+    ::-webkit-scrollbar-thumb { background: #333344; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4a4a5e; }
+    
+    /* Hero gradient */
+    .hero-gradient {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 141, 232, 0.15), transparent);
+    }
+    
+    /* Accent gradient */
+    .accent-gradient {
+      background: linear-gradient(135deg, #0e8de8, #7c3aed);
+    }
+    
+    /* Form styles */
+    .form-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      transition: all 0.3s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #0e8de8;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(14, 141, 232, 0.15);
+    }
+    .form-input::placeholder { color: #64748b; }
+    
+    /* Select styling */
+    .form-select {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      transition: all 0.3s;
+    }
+    .form-select:focus {
+      outline: none;
+      border-color: #0e8de8;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(14, 141, 232, 0.15);
+    }
+    .form-select option {
+      background: #111118;
+      color: #e2e8f0;
+    }
+    
+    /* Checkbox styling */
+    .form-checkbox {
+      accent-color: #0e8de8;
+    }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.6s ease-out forwards; }
+    
+    /* Card glow effect */
+    .card-glow:hover {
+      box-shadow: 0 0 40px rgba(14, 141, 232, 0.08), 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl bg-dark-900/80">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-brand-500/20">
+            AI
+          </div>
+          <span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">AI Productivity</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
+          <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Blog</a>
+          <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">About</a>
+          <a href="contact.html" class="ml-2 px-4 py-2 rounded-lg text-sm font-medium text-white bg-white/10 transition-all">Contact</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-white/5 pt-3">
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Home</a>
+          <a href="blog.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
+          <a href="about.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+          <a href="contact.html" class="px-4 py-3 rounded-lg text-sm font-medium text-white bg-white/10">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="flex-grow">
+    
+    <!-- Page Header -->
+    <section class="hero-gradient relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div class="max-w-2xl">
+          <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h1>
+          <p class="text-gray-400 text-lg max-w-xl">We'd love to hear from you. Whether you have a question, feedback, or want to collaborate, feel free to reach out.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12">
+          
+          <!-- Contact Form -->
+          <div class="rounded-2xl p-8" style="background: linear-gradient(135deg, #0c1a2e 0%, #0a0a0f 100%); border: 1px solid rgba(14,141,232,0.2);">
+            <h2 class="text-xl font-bold text-white mb-6">Send us a message</h2>
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name *</label>
+                <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 rounded-lg text-sm" placeholder="John Doe">
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg text-sm" placeholder="john@example.com">
+              </div>
+              
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject *</label>
+                <select id="subject" name="subject" required class="form-select w-full px-4 py-3 rounded-lg text-sm bg-dark-800 cursor-pointer">
+                  <option value="">Select a topic</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="collaboration">Collaboration</option>
+                  <option value="contribution">Article Contribution</option>
+                  <option value="support">Technical Support</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message *</label>
+                <textarea id="message" name="message" rows="5" required class="form-input w-full px-4 py-3 rounded-lg text-sm resize-none" placeholder="Tell us how we can help..."></textarea>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="consent" name="consent" required class="form-checkbox mt-1 w-4 h-4 cursor-pointer">
+                <label for="consent" class="text-sm text-gray-400">I agree to the <a href="privacy.html" class="text-brand-400 hover:underline">Privacy Policy</a> and consent to having this website store my submitted information.</label>
+              </div>
+              
+              <button type="submit" class="w-full px-6 py-3 accent-gradient text-white font-semibold rounded-xl hover:opacity-90 transition-all shadow-lg shadow-brand-500/25 hover:-translate-y-0.5">
+                Send Message
+              </button>
+            </form>
+            
+            <!-- Coming Soon Message -->
+            <div id="coming-soon-message" class="hidden mt-6 p-4 rounded-lg" style="background: rgba(14, 141, 232, 0.1); border: 1px solid rgba(14, 141, 232, 0.3);">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <div>
+                  <p class="font-medium text-brand-300">Coming Soon!</p>
+                  <p class="text-sm text-gray-400">This module is currently under development. We'll be launching this feature soon — stay tuned and follow our <a href="blog.html" class="text-brand-400 hover:underline">Blog</a> for updates!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Info -->
+          <div>
+            <h2 class="text-xl font-bold text-white mb-6">Other ways to reach us</h2>
+            
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-medium text-white">Email</h3>
+                  <p class="text-gray-400">hello@ainest.com</p>
+                  <p class="text-sm text-gray-600 mt-1">We typically respond within 24 hours</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-medium text-white">Social Media</h3>
+                  <div class="flex gap-3 mt-2">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors" aria-label="Twitter">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors" aria-label="GitHub">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-medium text-white">Location</h3>
+                  <p class="text-gray-400">Remote-first team</p>
+                  <p class="text-sm text-gray-600 mt-1">Working from anywhere</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- FAQ -->
+            <div class="mt-10 pt-10 border-t border-white/5">
+              <h3 class="font-bold text-white mb-4">Frequently Asked</h3>
+              <div class="space-y-4">
+                <details class="group rounded-lg p-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                  <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-300 group-hover:text-white transition-colors">
+                    <span>How can I contribute an article?</span>
+                    <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </summary>
+                  <p class="mt-3 text-gray-500 text-sm">We welcome guest contributions! Send us a brief pitch via the contact form with your proposed topic and relevant experience. We'll get back to you within a week.</p>
+                </details>
+                
+                <details class="group rounded-lg p-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                  <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-300 group-hover:text-white transition-colors">
+                    <span>Do you offer advertising opportunities?</span>
+                    <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </summary>
+                  <p class="mt-3 text-gray-500 text-sm">We don't accept traditional advertising. However, we're open to sponsored content that provides genuine value to our readers. Contact us to discuss options.</p>
+                </details>
+                
+                <details class="group rounded-lg p-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                  <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-300 group-hover:text-white transition-colors">
+                    <span>Can I republish your articles?</span>
+                    <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </summary>
+                  <p class="mt-3 text-gray-500 text-sm">Our content is copyrighted. You may share excerpts (with attribution) on social media, but republishing requires written permission. We're generally flexible for educational purposes.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm">AI</div>
+            <span class="text-lg font-bold text-white">AI Productivity</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-5 max-w-xs leading-relaxed">Daily AI & tech insights for professionals who want to work smarter, not harder.</p>
+          <!-- Social Links -->
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="RSS">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"></path></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="text-sm text-gray-500 hover:text-white transition-colors">Home</a></li>
+            <li><a href="blog.html" class="text-sm text-gray-500 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="about.html" class="text-sm text-gray-500 hover:text-white transition-colors">About</a></li>
+            <li><a href="contact.html" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Legal -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="privacy.html" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom bar -->
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-600">© 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const comingSoonMessage = document.getElementById('coming-soon-message');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Show coming soon message
+      contactForm.style.display = 'none';
+      comingSoonMessage.classList.remove('hidden');
+      
+      // Reset form after delay
+      setTimeout(() => {
+        contactForm.reset();
+        contactForm.style.display = 'block';
+        comingSoonMessage.classList.add('hidden');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Keep the git directory
+.git/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~

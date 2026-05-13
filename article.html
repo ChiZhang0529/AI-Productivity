@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Dynamic SEO Tags (set via JS) -->
+  <title>Loading... | AI Productivity</title>
+  <meta name="title" content="Loading... | AI Productivity">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook (dynamic) -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  
+  <!-- Twitter (dynamic) -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="">
+  <meta property="twitter:title" content="">
+  <meta property="twitter:description" content="">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  
+  <!-- Article Meta -->
+  <meta property="article:published_time" content="" id="article-date-meta">
+  <meta property="article:author" content="" id="article-author-meta">
+  <meta property="article:section" content="" id="article-category-meta">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              400: '#36b0f7',
+              500: '#0e8de8',
+              600: '#0070c4',
+              700: '#01599f',
+            },
+            dark: {
+              900: '#0a0a0f',
+              800: '#111118',
+              700: '#1a1a24',
+              600: '#22222e',
+              500: '#2a2a38',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0a0a0f; color: #e2e8f0; }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111118; }
+    ::-webkit-scrollbar-thumb { background: #333344; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4a4a5e; }
+    
+    /* Hero gradient */
+    .hero-gradient {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 141, 232, 0.15), transparent);
+    }
+    
+    /* Accent gradient */
+    .accent-gradient {
+      background: linear-gradient(135deg, #0e8de8, #7c3aed);
+    }
+    
+    /* Prose styles */
+    .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #f1f5f9; border-bottom: 1px solid #1f1f2e; padding-bottom: 0.75rem; }
+    .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: #f1f5f9; }
+    .prose h4 { font-size: 1.125rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #f1f5f9; }
+    .prose p { margin-bottom: 1rem; color: #cbd5e1; line-height: 1.8; }
+    .prose ul { list-style-type: disc; list-style-position: inside; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .prose ol { list-style-type: decimal; list-style-position: inside; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .prose li { color: #cbd5e1; }
+    .prose strong { font-weight: 600; color: #f1f5f9; }
+    .prose em { font-style: italic; }
+    .prose blockquote { border-left: 3px solid #0e8de8; padding-left: 1rem; font-style: italic; color: #94a3b8; margin: 1.5rem 0; background: rgba(14,141,232,0.05); padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose code { background: #1a1a24; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; font-family: 'Fira Code', 'Consolas', monospace; color: #7dd3fc; }
+    .prose pre { background: #0d0d14; border: 1px solid #22222e; color: #e2e8f0; padding: 1.25rem; border-radius: 0.75rem; overflow-x: auto; margin: 1.5rem 0; font-size: 0.875rem; line-height: 1.7; }
+    .prose pre code { background: transparent; padding: 0; color: inherit; }
+    .prose img { border-radius: 0.75rem; my-6; max-width: 100%; }
+    .prose hr { border-color: #1f1f2e; margin: 2rem 0; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .prose th { border: 1px solid #2a2a38; background: #111118; padding: 0.625rem 1rem; text-align: left; font-weight: 600; color: #e2e8f0; }
+    .prose td { border: 1px solid #2a2a38; padding: 0.625rem 1rem; color: #cbd5e1; }
+    .prose tr:nth-child(even) { background: #0f0f18; }
+    .prose a { color: #0e8de8; text-decoration: none; border-bottom: 1px solid rgba(14, 141, 232, 0.3); transition: all 0.2s; }
+    .prose a:hover { color: #7dd3fc; border-bottom-color: #7dd3fc; }
+    
+    /* Tag pill */
+    .tag-pill {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: rgba(14, 141, 232, 0.1);
+      color: #7dd3fc;
+      border: 1px solid rgba(14, 141, 232, 0.2);
+      transition: all 0.2s;
+    }
+    .tag-pill:hover {
+      background: rgba(14, 141, 232, 0.2);
+      border-color: rgba(14, 141, 232, 0.4);
+    }
+    
+    /* Newsletter input */
+    .newsletter-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      transition: all 0.3s;
+    }
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #0e8de8;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(14, 141, 232, 0.15);
+    }
+    .newsletter-input::placeholder { color: #64748b; }
+    
+    /* Category badge */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Share buttons */
+    .share-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a24;
+      border: 1px solid #2a2a38;
+      color: #94a3b8;
+      transition: all 0.2s;
+    }
+    .share-btn:hover {
+      background: #22222e;
+      color: white;
+      border-color: #3a3a4e;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl bg-dark-900/80">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-brand-500/20">
+            AI
+          </div>
+          <span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">AI Productivity</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
+          <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Blog</a>
+          <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">About</a>
+          <a href="contact.html" class="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-lg shadow-brand-500/20">Contact</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-white/5 pt-3">
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Home</a>
+          <a href="blog.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
+          <a href="about.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+          <a href="contact.html" class="px-4 py-3 rounded-lg text-sm font-medium bg-brand-600 text-white mt-1">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="flex-grow">
+    
+    <!-- Article Content -->
+    <article id="article-content" class="py-12 md:py-20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Loading State -->
+        <div id="loading-state" class="text-center py-20">
+          <div class="inline-block w-10 h-10 border-2 border-brand-500 border-t-transparent rounded-full animate-spin"></div>
+          <p class="mt-4 text-gray-500 text-sm">Loading article...</p>
+        </div>
+        
+        <!-- Error State -->
+        <div id="error-state" class="hidden text-center py-20">
+          <div class="w-16 h-16 rounded-2xl bg-dark-800 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold text-white mb-2">Article Not Found</h2>
+          <p class="text-gray-500 mb-6 text-sm">The article you're looking for doesn't exist or has been removed.</p>
+          <a href="blog.html" class="inline-flex items-center gap-2 px-5 py-2.5 accent-gradient text-white text-sm font-medium rounded-xl hover:opacity-90 transition-all">
+            ← Back to Blog
+          </a>
+        </div>
+        
+        <!-- Article -->
+        <div id="article" class="hidden">
+          
+          <!-- Breadcrumb -->
+          <nav class="mb-8">
+            <ol class="flex items-center text-xs text-gray-600 space-x-2">
+              <li><a href="index.html" class="hover:text-brand-400 transition-colors">Home</a></li>
+              <li><span class="text-gray-700">/</span></li>
+              <li><a href="blog.html" class="hover:text-brand-400 transition-colors">Blog</a></li>
+              <li><span class="text-gray-700">/</span></li>
+              <li class="text-gray-400 truncate max-w-xs" id="breadcrumb-title">Article</li>
+            </ol>
+          </nav>
+          
+          <!-- Article Header -->
+          <header class="mb-10">
+            <!-- Category & Date -->
+            <div class="flex items-center gap-3 mb-5" id="article-meta-top"></div>
+            
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight" id="article-title"></h1>
+            
+            <!-- Excerpt -->
+            <p class="text-lg text-gray-400 leading-relaxed" id="article-excerpt"></p>
+          </header>
+          
+          <!-- Author Info -->
+          <div class="flex items-center gap-4 pb-8 mb-10 border-b border-white/5">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center text-white text-lg font-bold" id="author-avatar"></div>
+            <div>
+              <p class="font-semibold text-white text-sm" id="author-name">Author</p>
+              <div class="flex items-center gap-2 text-xs text-gray-500">
+                <span id="author-date">Date</span>
+                <span>·</span>
+                <span class="flex items-center gap-1" id="read-time">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  5 min read
+                </span>
+              </div>
+            </div>
+            
+            <!-- Progress bar -->
+            <div class="ml-auto hidden md:flex items-center gap-2">
+              <div class="w-20 h-1 rounded-full bg-dark-600 overflow-hidden">
+                <div id="reading-progress" class="h-full accent-gradient rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Article Content -->
+          <div class="prose max-w-none" id="article-body"></div>
+          
+          <!-- Tags -->
+          <div class="mt-12 pt-8 border-t border-white/5" id="article-tags">
+            <div class="flex flex-wrap gap-2"></div>
+          </div>
+          
+        </div>
+      </div>
+    </article>
+    
+    <!-- Related Articles -->
+    <section id="related-section" class="hidden py-12 md:py-16 border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-xl font-bold text-white mb-8">Related Articles</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="related-articles"></div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm">AI</div>
+            <span class="text-lg font-bold text-white">AI Productivity</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-5 max-w-xs leading-relaxed">Daily AI & tech insights for professionals who want to work smarter, not harder.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="text-sm text-gray-500 hover:text-white transition-colors">Home</a></li>
+            <li><a href="blog.html" class="text-sm text-gray-500 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="about.html" class="text-sm text-gray-500 hover:text-white transition-colors">About</a></li>
+            <li><a href="contact.html" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Legal -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="privacy.html" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-600">© 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/articles.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Get article ID from URL
+    function getArticleId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id');
+    }
+    
+    // Format date
+    function formatDate(dateString) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString('en-US', options);
+    }
+    
+    // Calculate read time
+    function calculateReadTime(content) {
+      const words = content.replace(/<[^>]*>/g, '').split(/\s+/).length;
+      const minutes = Math.ceil(words / 200);
+      return minutes;
+    }
+    
+    // Copy link to clipboard
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const btn = event.currentTarget;
+        const original = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+        btn.classList.add('border-emerald-500/50');
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.classList.remove('border-emerald-500/50');
+        }, 2000);
+      });
+    }
+    
+    // Reading progress bar
+    function updateReadingProgress() {
+      const article = document.getElementById('article-body');
+      const progressBar = document.getElementById('reading-progress');
+      if (!article || !progressBar) return;
+      
+      const articleTop = article.offsetTop;
+      const articleHeight = article.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrolled = window.scrollY - articleTop + windowHeight / 2;
+      const progress = Math.max(0, Math.min(100, (scrolled / articleHeight) * 100));
+      progressBar.style.width = progress + '%';
+    }
+    
+    window.addEventListener('scroll', updateReadingProgress);
+    
+    // Update page with article data
+    function renderArticle(article) {
+      const baseUrl = 'https://theainest.com';
+      const articleUrl = baseUrl + '/article.html?id=' + article.id;
+      
+      // Update page title
+      document.title = article.title + ' | AI Productivity';
+      
+      // Update meta tags
+      document.querySelector('meta[name="title"]').content = article.title + ' | AI Productivity';
+      document.querySelector('meta[name="description"]').content = article.excerpt;
+      document.querySelector('meta[name="keywords"]').content = (article.tags || []).join(', ');
+      document.getElementById('article-date-meta').content = article.date;
+      document.getElementById('article-author-meta').content = article.author;
+      document.getElementById('article-category-meta').content = article.category;
+      
+      // Update OG tags
+      document.querySelector('meta[property="og:title"]').content = article.title;
+      document.querySelector('meta[property="og:description"]').content = article.excerpt;
+      document.querySelector('meta[property="og:url"]').content = articleUrl;
+      document.querySelector('meta[property="twitter:title"]').content = article.title;
+      document.querySelector('meta[property="twitter:description"]').content = article.excerpt;
+      document.querySelector('meta[property="twitter:url"]').content = articleUrl;
+      
+      // Update article content
+      document.getElementById('breadcrumb-title').textContent = article.title;
+      document.getElementById('article-title').textContent = article.title;
+      document.getElementById('article-excerpt').textContent = article.excerpt;
+      document.getElementById('author-name').textContent = article.author || 'AI Productivity';
+      document.getElementById('author-date').textContent = formatDate(article.date);
+      document.getElementById('author-avatar').textContent = (article.author || 'A').charAt(0).toUpperCase();
+      document.getElementById('article-body').innerHTML = article.content;
+      document.getElementById('read-time').innerHTML = '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> ' + calculateReadTime(article.content) + ' min read';
+      
+      // Update meta top
+      document.getElementById('article-meta-top').innerHTML = '<span class="category-badge bg-brand-500/10 text-brand-400 border border-brand-500/20">' + (article.category || 'General') + '</span><span class="text-xs text-gray-600">' + formatDate(article.date) + '</span>';
+      
+      // Update tags
+      if (article.tags && article.tags.length > 0) {
+        document.getElementById('article-tags').innerHTML = '<div class="flex flex-wrap gap-2">' + 
+          article.tags.map(tag => '<span class="tag-pill">' + tag + '</span>').join('') + 
+          '</div>';
+      } else {
+        document.getElementById('article-tags').classList.add('hidden');
+      }
+      
+      // Show article, hide loading
+      document.getElementById('loading-state').classList.add('hidden');
+      document.getElementById('article').classList.remove('hidden');
+      
+      // Update reading progress after a short delay
+      setTimeout(updateReadingProgress, 100);
+      
+      // Render related articles
+      renderRelatedArticles(article);
+    }
+    
+    // Render related articles
+    function renderRelatedArticles(currentArticle) {
+      const related = (typeof articles !== 'undefined' ? articles : [])
+        .filter(a => a.id !== currentArticle.id && a.category === currentArticle.category)
+        .slice(0, 3);
+      
+      const container = document.getElementById('related-articles');
+      
+      if (related.length > 0) {
+        document.getElementById('related-section').classList.remove('hidden');
+        container.innerHTML = related.map(article => {
+          const tags = (article.tags || []).slice(0, 2).map(t => '<span class="tag-pill">' + t + '</span>').join('');
+          return '<article class="group rounded-2xl bg-dark-800/60 border border-white/5 hover:border-brand-500/30 transition-all duration-300 overflow-hidden">' +
+            '<div class="p-6">' +
+            '<div class="flex items-center justify-between mb-3">' +
+            '<span class="category-badge bg-brand-500/10 text-brand-400 border border-brand-500/20">' + (article.category || 'General') + '</span>' +
+            '<span class="text-xs text-gray-600">' + formatDate(article.date) + '</span>' +
+            '</div>' +
+            '<h3 class="text-base font-bold text-white mb-2 leading-snug group-hover:text-brand-300 transition-colors">' +
+            '<a href="article.html?id=' + article.id + '" class="before:absolute before:inset-0 before:rounded-2xl">' + article.title + '</a>' +
+            '</h3>' +
+            '<p class="text-gray-500 text-sm line-clamp-2 mb-4">' + article.excerpt + '</p>' +
+            '<div class="flex items-center justify-between pt-3 border-t border-white/5">' +
+            '<span class="text-xs text-gray-600">' + tags + '</span>' +
+            '<a href="article.html?id=' + article.id + '" class="text-xs font-medium text-brand-400 hover:text-brand-300 transition-colors">Read more →</a>' +
+            '</div>' +
+            '</div>' +
+            '</article>';
+        }).join('');
+      }
+    }
+    
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', () => {
+      const articleId = getArticleId();
+      
+      if (!articleId) {
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('error-state').classList.remove('hidden');
+        return;
+      }
+      
+      const article = typeof getArticleById === 'function' ? getArticleById(articleId) : null;
+      
+      if (article) {
+        renderArticle(article);
+      } else {
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('error-state').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
