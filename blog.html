@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>Blog - All Articles | AI Productivity</title>
+  <meta name="title" content="Blog - All Articles | AI Productivity">
+  <meta name="description" content="Browse all articles on AI productivity, automation, ChatGPT, and the latest artificial intelligence tools and techniques.">
+  <meta name="keywords" content="AI blog, ChatGPT articles, productivity tools, automation hacks, AI tutorials">
+  <meta name="author" content="AI Productivity">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theainest.com/blog.html">
+  <meta property="og:title" content="Blog - All Articles | AI Productivity">
+  <meta property="og:description" content="Browse all articles on AI productivity, automation, ChatGPT, and more.">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://theainest.com/blog.html">
+  <meta property="twitter:title" content="Blog - All Articles | AI Productivity">
+  <meta property="twitter:description" content="Browse all articles on AI productivity, automation, ChatGPT, and more.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://theainest.com/blog.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#b9dffc',
+              300: '#7cc8fa',
+              400: '#36aaf5',
+              500: '#0e8de8',
+              600: '#0070c4',
+              700: '#01599f',
+              800: '#064b84',
+              900: '#0b3f6d',
+            },
+            dark: {
+              900: '#0a0a0f',
+              800: '#111118',
+              700: '#1a1a24',
+              600: '#22222e',
+              500: '#2a2a38',
+              400: '#333344',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0a0a0f; color: #e2e8f0; }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111118; }
+    ::-webkit-scrollbar-thumb { background: #333344; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4a4a5e; }
+    
+    /* Hero gradient */
+    .hero-gradient {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 141, 232, 0.15), transparent);
+    }
+    
+    /* Card glow effect */
+    .card-glow:hover {
+      box-shadow: 0 0 40px rgba(14, 141, 232, 0.08), 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Text gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Accent gradient */
+    .accent-gradient {
+      background: linear-gradient(135deg, #0e8de8, #7c3aed);
+    }
+    
+    /* Tag pill */
+    .tag-pill {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: rgba(14, 141, 232, 0.1);
+      color: #7dd3fc;
+      border: 1px solid rgba(14, 141, 232, 0.2);
+      transition: all 0.2s;
+    }
+    .tag-pill:hover {
+      background: rgba(14, 141, 232, 0.2);
+      border-color: rgba(14, 141, 232, 0.4);
+    }
+    
+    /* Category badge */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Filter button */
+    .filter-btn {
+      transition: all 0.2s;
+    }
+    
+    /* Form styles */
+    .form-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      transition: all 0.3s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #0e8de8;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(14, 141, 232, 0.15);
+    }
+    .form-input::placeholder { color: #64748b; }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.6s ease-out forwards; }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl bg-dark-900/80">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-brand-500/20">
+            AI
+          </div>
+          <span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">AI Productivity</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
+          <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-white/10 transition-all">Blog</a>
+          <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">About</a>
+          <a href="contact.html" class="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-lg shadow-brand-500/20">Contact</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-white/5 pt-3">
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Home</a>
+          <a href="blog.html" class="px-4 py-3 rounded-lg text-sm font-medium text-white bg-white/10">Blog</a>
+          <a href="about.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+          <a href="contact.html" class="px-4 py-3 rounded-lg text-sm font-medium bg-brand-600 text-white mt-1">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="flex-grow">
+    
+    <!-- Page Header -->
+    <section class="hero-gradient relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div class="max-w-2xl">
+          <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Blog</h1>
+          <p class="text-gray-400 text-lg max-w-xl">Explore our collection of articles on AI productivity, automation hacks, and the latest tools to supercharge your workflow.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Filter Section -->
+    <section class="border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-wrap gap-2" id="category-filters">
+          <button onclick="filterArticles('all')" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-brand-600 text-white transition-all" data-cat="all">All</button>
+          <button onclick="filterArticles('ai productivity')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai productivity">AI Productivity</button>
+          <button onclick="filterArticles('ai tools')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai tools">AI Tools</button>
+          <button onclick="filterArticles('ai tips')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai tips">AI Tips</button>
+          <button onclick="filterArticles('ai writing')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai writing">AI Writing</button>
+          <button onclick="filterArticles('productivity')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="productivity">Productivity</button>
+          <button onclick="filterArticles('ai creative')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai creative">AI Creative</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Articles Grid -->
+    <section class="py-12 md:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center mb-8">
+          <p class="text-gray-500 text-sm" id="results-count">Showing all articles</p>
+          <select id="sort-select" class="form-input px-4 py-2 rounded-lg text-sm bg-dark-800 border-dark-600 cursor-pointer">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="title">Title A-Z</option>
+          </select>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid">
+          <!-- Articles loaded via JavaScript -->
+        </div>
+        
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-16">
+          <svg class="w-16 h-16 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+          </svg>
+          <h3 class="text-lg font-medium text-gray-300 mb-2">No articles found</h3>
+          <p class="text-gray-600">Try adjusting your filters or check back later.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm">AI</div>
+            <span class="text-lg font-bold text-white">AI Productivity</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-5 max-w-xs leading-relaxed">Daily AI & tech insights for professionals who want to work smarter, not harder.</p>
+          <!-- Social Links -->
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="RSS">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"></path></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="text-sm text-gray-500 hover:text-white transition-colors">Home</a></li>
+            <li><a href="blog.html" class="text-sm text-gray-500 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="about.html" class="text-sm text-gray-500 hover:text-white transition-colors">About</a></li>
+            <li><a href="contact.html" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Legal -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="privacy.html" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom bar -->
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-600">© 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/articles.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Format date
+    function formatDate(dateString) {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString('en-US', options);
+    }
+    
+    // Estimate read time
+    function estimateReadTime(content) {
+      const wordsPerMinute = 200;
+      const wordCount = (content || '').split(/\s+/).length;
+      const minutes = Math.ceil(wordCount / wordsPerMinute);
+      return `${minutes} min read`;
+    }
+    
+    // Get category icon
+    function getCategoryIcon(category) {
+      const icons = {
+        'AI Productivity': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>',
+        'AI Tools': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+        'AI Tips': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
+        'AI Writing': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>',
+        'Productivity': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+        'AI Creative': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>',
+        'Web Development': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>',
+        'SEO': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>',
+        'Design': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>'
+      };
+      return icons[category] || '<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76zM9 15H7v-2M16 16l-2-2"/></svg>';
+    }
+    
+    // State
+    let currentCategory = 'all';
+    let currentSort = 'newest';
+    
+    // Get all articles
+    function getAllArticles() {
+      if (typeof window.articles !== 'undefined') {
+        return window.articles;
+      }
+      // Fallback to articles.js data
+      try {
+        return typeof getArticles === 'function' ? getArticles() : [];
+      } catch (e) {
+        return [];
+      }
+    }
+    
+    // Create article card
+    function createArticleCard(article) {
+      const catLower = (article.category || '').toLowerCase();
+      const tags = Array.isArray(article.tags) ? article.tags : [];
+      const displayTags = tags.slice(0, 2).map(t => `<span class="tag-pill">${t}</span>`).join('');
+      
+      return `
+        <article class="article-card relative group rounded-2xl bg-dark-800/60 border border-white/5 hover:border-brand-500/30 transition-all duration-300 overflow-hidden card-glow flex flex-col"
+                 data-category="${catLower}">
+          <!-- Card top accent -->
+          <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="p-6 flex flex-col flex-grow">
+            <!-- Meta row -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="category-badge bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                ${getCategoryIcon(article.category)}
+                <span>${article.category || 'General'}</span>
+              </span>
+              <span class="text-xs text-gray-600 font-medium">${formatDate(article.date)}</span>
+            </div>
+            
+            <!-- Title -->
+            <h3 class="text-lg font-bold text-white mb-3 leading-snug group-hover:text-brand-300 transition-colors">
+              <a href="${article.url || 'article.html?id=' + article.id}" class="before:absolute before:inset-0 before:rounded-2xl">
+                ${article.title}
+              </a>
+            </h3>
+            
+            <!-- Excerpt -->
+            <p class="text-gray-500 text-sm mb-5 leading-relaxed flex-grow line-clamp-3">${article.excerpt}</p>
+            
+            <!-- Footer -->
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center">
+                  <span class="text-white text-xs font-bold">${(article.author || 'AI').charAt(0)}</span>
+                </div>
+                <span class="text-xs text-gray-500">${article.author || 'AI Productivity'}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                ${displayTags}
+                <span class="text-xs text-gray-600">${estimateReadTime(article.content || article.excerpt)}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+    
+    // Sort articles
+    function sortArticles(articles) {
+      const sorted = [...articles];
+      
+      switch (currentSort) {
+        case 'newest':
+          return sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+        case 'oldest':
+          return sorted.sort((a, b) => new Date(a.date) - new Date(b.date));
+        case 'title':
+          return sorted.sort((a, b) => a.title.localeCompare(b.title));
+        default:
+          return sorted;
+      }
+    }
+    
+    // Filter articles
+    function filterArticles(category) {
+      currentCategory = category;
+      
+      // Update filter button styles
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        const btnCat = btn.dataset.cat;
+        if (btnCat === category) {
+          btn.classList.remove('bg-dark-600', 'text-gray-400', 'hover:bg-dark-500', 'hover:text-gray-300');
+          btn.classList.add('bg-brand-600', 'text-white');
+        } else {
+          btn.classList.remove('bg-brand-600', 'text-white');
+          btn.classList.add('bg-dark-600', 'text-gray-400', 'hover:bg-dark-500', 'hover:text-gray-300');
+        }
+      });
+      
+      renderArticles();
+    }
+    
+    // Render articles
+    function renderArticles() {
+      const articles = getAllArticles();
+      let filtered = articles;
+      
+      if (currentCategory !== 'all') {
+        filtered = articles.filter(a => (a.category || '').toLowerCase().includes(currentCategory));
+      }
+      
+      const sorted = sortArticles(filtered);
+      const container = document.getElementById('articles-grid');
+      const emptyState = document.getElementById('empty-state');
+      const resultsCount = document.getElementById('results-count');
+      
+      if (sorted.length === 0) {
+        container.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        resultsCount.textContent = 'No articles found';
+      } else {
+        container.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+        container.innerHTML = sorted.map(createArticleCard).join('');
+        resultsCount.textContent = `Showing ${sorted.length} article${sorted.length !== 1 ? 's' : ''}`;
+      }
+    }
+    
+    // Sort select change
+    document.getElementById('sort-select').addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      renderArticles();
+    });
+    
+    // Initialize
+    renderArticles();
+  </script>
+</body>
+</html>

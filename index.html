@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>AI Productivity — Daily AI & Tech Insights</title>
+  <meta name="title" content="AI Productivity — Daily AI & Tech Insights">
+  <meta name="description" content="Expert insights on AI productivity tools, automation hacks, and the latest in artificial intelligence. Learn how to work smarter with AI.">
+  <meta name="keywords" content="AI productivity, ChatGPT, artificial intelligence, automation, productivity tools, AI hacks">
+  <meta name="author" content="AI Productivity">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theainest.com/">
+  <meta property="og:title" content="AI Productivity — Daily AI & Tech Insights">
+  <meta property="og:description" content="Expert insights on AI productivity tools, automation hacks, and the latest in artificial intelligence.">
+  <meta property="og:image" content="https://theainest.com/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://theainest.com/">
+  <meta property="twitter:title" content="AI Productivity — Daily AI & Tech Insights">
+  <meta property="twitter:description" content="Expert insights on AI productivity tools, automation hacks, and the latest in artificial intelligence.">
+  <meta property="twitter:image" content="https://theainest.com/og-image.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://theainest.com/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#b9dffc',
+              300: '#7cc8fa',
+              400: '#36aaf5',
+              500: '#0e8de8',
+              600: '#0070c4',
+              700: '#01599f',
+              800: '#064b84',
+              900: '#0b3f6d',
+            },
+            dark: {
+              900: '#0a0a0f',
+              800: '#111118',
+              700: '#1a1a24',
+              600: '#22222e',
+              500: '#2a2a38',
+              400: '#333344',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0a0a0f; color: #e2e8f0; }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111118; }
+    ::-webkit-scrollbar-thumb { background: #333344; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4a4a5e; }
+    
+    /* Hero gradient */
+    .hero-gradient {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 141, 232, 0.15), transparent);
+    }
+    
+    /* Card glow effect */
+    .card-glow:hover {
+      box-shadow: 0 0 40px rgba(14, 141, 232, 0.08), 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Text gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Accent gradient */
+    .accent-gradient {
+      background: linear-gradient(135deg, #0e8de8, #7c3aed);
+    }
+    
+    /* Prose styles for article content */
+    .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #f1f5f9; }
+    .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: #f1f5f9; }
+    .prose h4 { font-size: 1.125rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #f1f5f9; }
+    .prose p { margin-bottom: 1rem; color: #cbd5e1; line-height: 1.8; }
+    .prose ul { list-style-type: disc; list-style-position: inside; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .prose ol { list-style-type: decimal; list-style-position: inside; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .prose li { color: #cbd5e1; }
+    .prose strong { font-weight: 600; color: #f1f5f9; }
+    .prose em { font-style: italic; }
+    .prose blockquote { border-left: 3px solid #0e8de8; padding-left: 1rem; font-style: italic; color: #94a3b8; margin: 1.5rem 0; }
+    .prose code { background: #1a1a24; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; font-family: 'Fira Code', 'Consolas', monospace; color: #7dd3fc; }
+    .prose pre { background: #0d0d14; border: 1px solid #22222e; color: #e2e8f0; padding: 1.25rem; border-radius: 0.75rem; overflow-x: auto; margin: 1.5rem 0; font-size: 0.875rem; line-height: 1.7; }
+    .prose pre code { background: transparent; padding: 0; color: inherit; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .prose th { border: 1px solid #2a2a38; background: #111118; padding: 0.625rem 1rem; text-align: left; font-weight: 600; color: #e2e8f0; }
+    .prose td { border: 1px solid #2a2a38; padding: 0.625rem 1rem; color: #cbd5e1; }
+    .prose tr:nth-child(even) { background: #0f0f18; }
+    .prose hr { border-color: #1f1f2e; margin: 2rem 0; }
+    .prose a { color: #0e8de8; text-decoration: none; border-bottom: 1px solid rgba(14, 141, 232, 0.3); transition: all 0.2s; }
+    .prose a:hover { color: #7dd3fc; border-bottom-color: #7dd3fc; }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeInUp 0.6s ease-out forwards; }
+    
+    /* Tag pill */
+    .tag-pill {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: rgba(14, 141, 232, 0.1);
+      color: #7dd3fc;
+      border: 1px solid rgba(14, 141, 232, 0.2);
+      transition: all 0.2s;
+    }
+    .tag-pill:hover {
+      background: rgba(14, 141, 232, 0.2);
+      border-color: rgba(14, 141, 232, 0.4);
+    }
+    
+    /* Newsletter input */
+    .newsletter-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      transition: all 0.3s;
+    }
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #0e8de8;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(14, 141, 232, 0.15);
+    }
+    .newsletter-input::placeholder { color: #64748b; }
+    
+    /* Category badge */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.625rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl bg-dark-900/80">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-brand-500/20">
+            AI
+          </div>
+          <span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">AI Productivity</span>
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-white/10 transition-all">Home</a>
+          <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Blog</a>
+          <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">About</a>
+          <a href="#minigame" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium bg-purple-600/20 text-purple-400 border border-purple-500/30 hover:bg-purple-600/30 hover:border-purple-500/50 transition-all" title="Play Game">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Play
+          </a>
+          <a href="contact.html" class="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-lg shadow-brand-500/20">Contact</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-white/5 pt-3">
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="px-4 py-3 rounded-lg text-sm font-medium text-white bg-white/10">Home</a>
+          <a href="blog.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
+          <a href="about.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+          <a href="contact.html" class="px-4 py-3 rounded-lg text-sm font-medium bg-brand-600 text-white mt-1">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="flex-grow">
+    
+    <!-- Hero Section -->
+    <section class="hero-gradient relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div class="max-w-3xl mx-auto text-center">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-semibold tracking-wider uppercase mb-8 animate-fade-in">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+            Daily AI & Tech Insights
+          </div>
+          
+          <!-- Headline -->
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in" style="animation-delay: 0.1s">
+            Work smarter with
+            <span class="text-gradient"> AI productivity</span>
+          </h1>
+          
+          <!-- Subheadline -->
+          <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.2s">
+            Practical guides, automation hacks, and deep dives into the latest AI tools. No fluff — just actionable insights to 10x your workflow.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in" style="animation-delay: 0.3s">
+            <a href="#articles" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 accent-gradient text-white font-semibold rounded-xl hover:opacity-90 transition-all shadow-xl shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              Explore Articles
+            </a>
+            <a href="about.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-white/10 text-gray-300 font-semibold rounded-xl hover:bg-white/5 hover:border-white/20 transition-all">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="flex justify-center gap-8 mt-14 animate-fade-in" style="animation-delay: 0.4s">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">23+</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium">Articles</div>
+            </div>
+            <div class="w-px bg-white/10"></div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">5k+</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium">Readers</div>
+            </div>
+            <div class="w-px bg-white/10"></div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">Daily</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium">Updates</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Articles Section -->
+    <section id="articles" class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-1">Latest Articles</h2>
+            <p class="text-gray-500 text-sm">Fresh insights on AI productivity tools</p>
+          </div>
+          <a href="blog.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-400 hover:text-brand-300 transition-colors group">
+            View all articles
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+        
+        
+        <!-- Articles Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-container">
+          <!-- Articles loaded via JavaScript -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Mini Game Section -->
+    <section id="minigame" class="py-16 md:py-24 border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Stick Hero vs Monsters</h2>
+          <p class="text-gray-500 max-w-lg mx-auto">Use arrow keys or buttons to move. Click or press Space to attack!</p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto">
+          <div class="relative rounded-2xl overflow-hidden" style="background: linear-gradient(135deg, #0c1a2e 0%, #0a0a0f 100%); border: 1px solid rgba(14,141,232,0.2);">
+            <!-- Game Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-white/5">
+              <div class="flex items-center gap-4">
+                <div class="text-sm"><span class="text-gray-500">Score:</span> <span id="game-score" class="text-white font-bold ml-1">0</span></div>
+                <div class="text-sm"><span class="text-gray-500">Wave:</span> <span id="game-wave" class="text-white font-bold ml-1">1</span></div>
+                <div class="text-sm"><span class="text-gray-500">Lives:</span> <span id="game-lives" class="text-red-400 font-bold ml-1">3</span></div>
+                <div class="text-sm"><span class="text-gray-500">Best:</span> <span id="game-best" class="text-brand-400 font-bold ml-1">0</span></div>
+              </div>
+              <button id="game-start-btn" class="px-4 py-2 accent-gradient text-white text-sm font-semibold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-brand-500/25">Start Game</button>
+            </div>
+            
+            <!-- Game Canvas -->
+            <div id="game-wrapper" class="relative">
+              <canvas id="game-canvas" class="block w-full cursor-pointer" width="640" height="360"></canvas>
+              
+              <!-- Game Over Overlay -->
+              <div id="game-over-overlay" class="absolute inset-0 flex flex-col items-center justify-center bg-dark-900/90 z-20 hidden">
+                <h3 class="text-2xl font-bold text-white mb-2">Game Over!</h3>
+                <div class="text-center mb-6">
+                  <p class="text-gray-500 text-sm">Final Score</p>
+                  <p id="game-final-score" class="text-4xl font-bold text-brand-400">0</p>
+                  <p class="text-gray-500 text-xs mt-1">Wave: <span id="game-final-wave">1</span></p>
+                </div>
+                <div class="flex gap-3">
+                  <button id="game-restart-btn" class="px-6 py-3 accent-gradient text-white font-semibold rounded-xl hover:opacity-90 transition-all shadow-lg shadow-brand-500/25">Play Again</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Mobile Controls -->
+            <div id="mobile-controls" class="flex items-center justify-center gap-6 py-4 border-t border-white/5 hidden">
+              <button id="btn-left" class="w-14 h-14 rounded-xl bg-dark-700 border border-white/10 flex items-center justify-center text-white active:bg-dark-600 transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <button id="btn-attack" class="w-16 h-16 rounded-xl accent-gradient flex items-center justify-center text-white shadow-lg shadow-brand-500/30 active:scale-95 transition-all">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </button>
+              <button id="btn-right" class="w-14 h-14 rounded-xl bg-dark-700 border border-white/10 flex items-center justify-center text-white active:bg-dark-600 transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+          
+          <!-- How to Play -->
+          <div class="mt-6 p-4 rounded-xl bg-dark-800/40 border border-white/5">
+            <p class="text-xs text-gray-500 text-center">
+              <span class="text-gray-400 font-medium">How to Play:</span> Move left/right with arrow keys or buttons. Press <kbd class="px-1.5 py-0.5 rounded bg-dark-700 text-gray-300 text-xs">Space</kbd> or click to attack. Defeat monsters before they reach you!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm">AI</div>
+            <span class="text-lg font-bold text-white">AI Productivity</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-5 max-w-xs leading-relaxed">Daily AI & tech insights for professionals who want to work smarter, not harder. Built for the age of artificial intelligence.</p>
+          <!-- Social Links -->
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-dark-700 flex items-center justify-center text-gray-500 hover:text-white hover:bg-dark-600 transition-all" aria-label="RSS">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"></path></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="text-sm text-gray-500 hover:text-white transition-colors">Home</a></li>
+            <li><a href="blog.html" class="text-sm text-gray-500 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="about.html" class="text-sm text-gray-500 hover:text-white transition-colors">About</a></li>
+            <li><a href="contact.html" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Legal -->
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="privacy.html" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom bar -->
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-600">© 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="js/articles.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Format date
+    function formatDate(dateString) {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString('en-US', options);
+    }
+    
+    // Estimate read time
+    function estimateReadTime(content) {
+      const wordsPerMinute = 200;
+      const wordCount = content.split(/\s+/).length;
+      const minutes = Math.ceil(wordCount / wordsPerMinute);
+      return `${minutes} min read`;
+    }
+    
+    // Get category icon
+    function getCategoryIcon(category) {
+      const icons = {
+        'ChatGPT': '<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.23V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4993-2.6067-1.4993Z"/></svg>',
+        'Productivity': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>',
+        'Automation': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
+        'Writing': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>',
+        'AI Tools': '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>'
+      };
+      return icons[category] || '<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76zM9 15H7v-2M16 16l-2-2"/></svg>';
+    }
+    
+    // Create article card
+    function createArticleCard(article) {
+      const catLower = (article.category || '').toLowerCase();
+      const tags = Array.isArray(article.tags) ? article.tags : [];
+      const displayTags = tags.slice(0, 2).map(t => `<span class="tag-pill">${t}</span>`).join('');
+      
+      return `
+        <article class="article-card relative group rounded-2xl bg-dark-800/60 border border-white/5 hover:border-brand-500/30 transition-all duration-300 overflow-hidden card-glow flex flex-col"
+                 data-category="${catLower}">
+          <!-- Card top accent -->
+          <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="p-6 flex flex-col flex-grow">
+            <!-- Meta row -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="category-badge bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                ${getCategoryIcon(article.category)}
+                <span>${article.category || 'General'}</span>
+              </span>
+              <span class="text-xs text-gray-600 font-medium">${formatDate(article.date)}</span>
+            </div>
+            
+            <!-- Title -->
+            <h3 class="text-lg font-bold text-white mb-3 leading-snug group-hover:text-brand-300 transition-colors">
+              <a href="${article.url || 'article.html?id=' + article.id}" class="before:absolute before:inset-0 before:rounded-2xl">
+                ${article.title}
+              </a>
+            </h3>
+            
+            <!-- Excerpt -->
+            <p class="text-gray-500 text-sm mb-5 leading-relaxed flex-grow line-clamp-3">${article.excerpt}</p>
+            
+            <!-- Footer -->
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center">
+                  <span class="text-white text-xs font-bold">${(article.author || 'AI').charAt(0)}</span>
+                </div>
+                <span class="text-xs text-gray-500">${article.author || 'AI Productivity'}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                ${displayTags}
+                <span class="text-xs text-gray-600">${estimateReadTime(article.content || article.excerpt)}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+    
+    // Load first 3 articles on homepage
+    const container = document.getElementById('articles-container');
+    const allArticles = typeof getRecentArticles === 'function' ? getRecentArticles(50) : (window.articles || []);
+    const homeArticles = allArticles.slice(0, 3); // Only show first 3 on homepage
+    
+    if (homeArticles.length > 0) {
+      container.innerHTML = homeArticles.map(createArticleCard).join('') + `
+        <div class="col-span-full text-center pt-4">
+          <a href="blog.html" class="inline-flex items-center gap-2 px-6 py-3 accent-gradient text-white font-semibold rounded-xl hover:opacity-90 transition-all shadow-lg shadow-brand-500/25">
+            View All Articles
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+        </div>
+      `;
+    } else {
+      container.innerHTML = '<div class="col-span-full text-center py-16"><p class="text-gray-500">No articles yet. Check back soon!</p></div>';
+    }
+    
+    // Stick Hero vs Monsters Game
+    (function() {
+      const canvas = document.getElementById('game-canvas');
+      const ctx = canvas.getContext('2d');
+      const scoreEl = document.getElementById('game-score');
+      const waveEl = document.getElementById('game-wave');
+      const livesEl = document.getElementById('game-lives');
+      const bestEl = document.getElementById('game-best');
+      const startBtn = document.getElementById('game-start-btn');
+      const gameOverOverlay = document.getElementById('game-over-overlay');
+      const finalScoreEl = document.getElementById('game-final-score');
+      const finalWaveEl = document.getElementById('game-final-wave');
+      const restartBtn = document.getElementById('game-restart-btn');
+      const mobileControls = document.getElementById('mobile-controls');
+
+      // Responsive canvas
+      function resizeCanvas() {
+        const wrapper = document.getElementById('game-wrapper');
+        const maxW = Math.min(wrapper.offsetWidth, 640);
+        canvas.style.width = maxW + 'px';
+        canvas.style.height = (maxW * 0.5625) + 'px';
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      let isPlaying = false;
+      let score = 0;
+      let wave = 1;
+      let lives = 3;
+      let bestScore = parseInt(localStorage.getItem('stickHeroBest') || '0');
+      bestEl.textContent = bestScore;
+
+      let animFrame;
+      let lastTime = 0;
+      let spawnTimer = 0;
+      let waveTimer = 0;
+      let attackCooldown = 0;
+      let isAttacking = false;
+      let attackAnim = 0;
+      let screenShake = 0;
+      let particles = [];
+      let hitFlash = 0;
+
+      const W = 640, H = 360;
+      const GROUND_Y = H - 40;
+
+      // Hero
+      const hero = {
+        x: W / 2, y: GROUND_Y,
+        w: 24, h: 48,
+        speed: 5,
+        vx: 0,
+        facing: 1,
+        moving: false
+      };
+
+      let monsters = [];
+      let attacks = [];
+
+      // Monster types
+      const MONSTER_TYPES = [
+        { name: 'slime', color: '#22c55e', w: 28, h: 22, speed: 1.2, hp: 1, pts: 10, eyeColor: '#fff' },
+        { name: 'goblin', color: '#f97316', w: 22, h: 38, speed: 1.8, hp: 1, pts: 15, eyeColor: '#fff' },
+        { name: 'demon', color: '#ef4444', w: 30, h: 40, speed: 2.2, hp: 2, pts: 25, eyeColor: '#ffff00' },
+        { name: 'ghost', color: '#a855f7', w: 26, h: 36, speed: 1.5, hp: 1, pts: 20, eyeColor: '#fff', float: true },
+        { name: 'skull', color: '#64748b', w: 24, h: 34, speed: 2.5, hp: 1, pts: 30, eyeColor: '#ef4444' }
+      ];
+
+      // Input
+      const keys = { left: false, right: false };
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'a') keys.left = true;
+        if (e.key === 'ArrowRight' || e.key === 'd') keys.right = true;
+        if (e.key === ' ') { e.preventDefault(); triggerAttack(); }
+      });
+      document.addEventListener('keyup', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'a') keys.left = false;
+        if (e.key === 'ArrowRight' || e.key === 'd') keys.right = false;
+      });
+
+      // Mobile buttons
+      const btnLeft = document.getElementById('btn-left');
+      const btnRight = document.getElementById('btn-right');
+      const btnAttack = document.getElementById('btn-attack');
+      btnLeft.addEventListener('touchstart', (e) => { e.preventDefault(); keys.left = true; });
+      btnLeft.addEventListener('touchend', () => { keys.left = false; });
+      btnRight.addEventListener('touchstart', (e) => { e.preventDefault(); keys.right = true; });
+      btnRight.addEventListener('touchend', () => { keys.right = false; });
+      btnAttack.addEventListener('touchstart', (e) => { e.preventDefault(); triggerAttack(); });
+
+      canvas.addEventListener('click', triggerAttack);
+      canvas.addEventListener('touchstart', (e) => { e.preventDefault(); triggerAttack(); });
+
+      function triggerAttack() {
+        if (!isPlaying || attackCooldown > 0) return;
+        isAttacking = true;
+        attackAnim = 0;
+        attackCooldown = 20;
+        
+        // Check hit
+        const atkRange = 80;
+        monsters.forEach((m, i) => {
+          const dx = m.x - hero.x;
+          const dy = m.y - hero.y - m.h / 2;
+          if (Math.abs(dx) < atkRange && Math.abs(dy) < m.h && Math.sign(dx) === hero.facing || Math.abs(dx) < 40) {
+            m.hp--;
+            screenShake = 5;
+            spawnParticles(m.x, m.y - m.h / 2, m.color, 8);
+            if (m.hp <= 0) {
+              score += m.pts;
+              scoreEl.textContent = score;
+              spawnParticles(m.x, m.y - m.h / 2, '#fff', 12);
+              monsters.splice(i, 1);
+            }
+          }
+        });
+      }
+
+      function spawnParticles(x, y, color, count) {
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x, y,
+            vx: (Math.random() - 0.5) * 8,
+            vy: (Math.random() - 0.5) * 8 - 3,
+            life: 30,
+            color
+          });
+        }
+      }
+
+      function spawnMonster() {
+        const types = MONSTER_TYPES;
+        const pool = wave < 3 ? [types[0], types[1]] : wave < 5 ? [types[0], types[1], types[3]] : types;
+        const t = pool[Math.floor(Math.random() * pool.length)];
+        const side = Math.random() < 0.5 ? 0 : 1;
+        const m = {
+          ...t,
+          x: side === 0 ? -t.w : W + t.w,
+          y: GROUND_Y,
+          dir: side === 0 ? 1 : -1,
+          anim: Math.random() * Math.PI * 2
+        };
+        monsters.push(m);
+      }
+
+      function drawStickFigure(x, y, facing, attacking, attackFrame) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.scale(facing, 1);
+
+        const headR = 9;
+        const bodyH = 20;
+        const legLen = 18;
+        const armLen = 16;
+
+        // Attack arm angle
+        let armAngle = attacking ? -Math.PI / 3 + attackFrame * 0.3 : -0.3;
+
+        ctx.strokeStyle = '#e2e8f0';
+        ctx.lineWidth = 3;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+
+        // Legs
+        const legSpread = attacking ? 6 : 0;
+        ctx.beginPath();
+        ctx.moveTo(-legSpread, 0);
+        ctx.lineTo(-4, -legLen);
+        ctx.moveTo(legSpread, 0);
+        ctx.lineTo(4, -legLen);
+        ctx.stroke();
+
+        // Body
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, -bodyH);
+        ctx.stroke();
+
+        // Head
+        ctx.beginPath();
+        ctx.arc(0, -bodyH - headR, headR, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Back arm
+        ctx.beginPath();
+        ctx.moveTo(0, -bodyH + 4);
+        ctx.lineTo(-armLen * 0.8, -bodyH + 4 + armLen * 0.5);
+        ctx.stroke();
+
+        // Attack arm (with weapon)
+        ctx.beginPath();
+        ctx.moveTo(0, -bodyH + 4);
+        const ax = Math.cos(armAngle) * armLen;
+        const ay = Math.sin(armAngle) * armLen;
+        ctx.lineTo(ax, -bodyH + 4 + ay);
+        ctx.stroke();
+
+        // Sword
+        if (attacking) {
+          ctx.strokeStyle = '#7dd3fc';
+          ctx.lineWidth = 2;
+          const sx = ax, sy = -bodyH + 4 + ay;
+          ctx.beginPath();
+          ctx.moveTo(sx, sy);
+          ctx.lineTo(sx + 20, sy - 15);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(sx + 5, sy + 5);
+          ctx.lineTo(sx + 18, sy - 5);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      }
+
+      function drawMonster(m) {
+        ctx.save();
+        ctx.translate(m.x, m.y);
+
+        const bounce = Math.sin(m.anim) * 3;
+        const floatY = m.float ? bounce : 0;
+
+        if (m.name === 'slime') {
+          ctx.fillStyle = m.color;
+          ctx.beginPath();
+          ctx.ellipse(0, -m.h / 2 + floatY, m.w / 2, m.h / 2, 0, 0, Math.PI * 2);
+          ctx.fill();
+          // Eyes
+          ctx.fillStyle = '#fff';
+          ctx.beginPath();
+          ctx.arc(-5, -m.h / 2 - 2 + floatY, 4, 0, Math.PI * 2);
+          ctx.arc(5, -m.h / 2 - 2 + floatY, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#000';
+          ctx.beginPath();
+          ctx.arc(-4, -m.h / 2 - 2 + floatY, 2, 0, Math.PI * 2);
+          ctx.arc(6, -m.h / 2 - 2 + floatY, 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (m.name === 'goblin') {
+          // Body
+          ctx.fillStyle = m.color;
+          ctx.beginPath();
+          ctx.ellipse(0, -m.h / 2 + floatY, m.w / 2, m.h / 2, 0, 0, Math.PI * 2);
+          ctx.fill();
+          // Ears
+          ctx.beginPath();
+          ctx.moveTo(-8, -m.h + 5 + floatY);
+          ctx.lineTo(-14, -m.h - 5 + floatY);
+          ctx.lineTo(-5, -m.h + floatY);
+          ctx.fill();
+          ctx.beginPath();
+          ctx.moveTo(8, -m.h + 5 + floatY);
+          ctx.lineTo(14, -m.h - 5 + floatY);
+          ctx.lineTo(5, -m.h + floatY);
+          ctx.fill();
+          // Eyes
+          ctx.fillStyle = m.eyeColor;
+          ctx.beginPath();
+          ctx.arc(-4, -m.h / 2 - 3 + floatY, 3, 0, Math.PI * 2);
+          ctx.arc(4, -m.h / 2 - 3 + floatY, 3, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#000';
+          ctx.beginPath();
+          ctx.arc(-3, -m.h / 2 - 3 + floatY, 1.5, 0, Math.PI * 2);
+          ctx.arc(5, -m.h / 2 - 3 + floatY, 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (m.name === 'demon') {
+          ctx.fillStyle = m.color;
+          ctx.beginPath();
+          ctx.ellipse(0, -m.h / 2 + floatY, m.w / 2, m.h / 2, 0, 0, Math.PI * 2);
+          ctx.fill();
+          // Horns
+          ctx.fillStyle = '#7f1d1d';
+          ctx.beginPath();
+          ctx.moveTo(-8, -m.h + 8 + floatY);
+          ctx.lineTo(-14, -m.h - 8 + floatY);
+          ctx.lineTo(-5, -m.h + 3 + floatY);
+          ctx.fill();
+          ctx.beginPath();
+          ctx.moveTo(8, -m.h + 8 + floatY);
+          ctx.lineTo(14, -m.h - 8 + floatY);
+          ctx.lineTo(5, -m.h + 3 + floatY);
+          ctx.fill();
+          // Eyes
+          ctx.fillStyle = m.eyeColor;
+          ctx.beginPath();
+          ctx.arc(-5, -m.h / 2 - 3 + floatY, 4, 0, Math.PI * 2);
+          ctx.arc(5, -m.h / 2 - 3 + floatY, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#000';
+          ctx.beginPath();
+          ctx.arc(-4, -m.h / 2 - 3 + floatY, 2, 0, Math.PI * 2);
+          ctx.arc(6, -m.h / 2 - 3 + floatY, 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (m.name === 'ghost') {
+          ctx.globalAlpha = 0.8;
+          ctx.fillStyle = m.color;
+          ctx.beginPath();
+          ctx.arc(0, -m.h / 2 + 5 + floatY, m.w / 2, Math.PI, 0);
+          ctx.lineTo(m.w / 2, -m.h / 2 + floatY);
+          for (let i = 0; i < 4; i++) {
+            const gx = m.w / 2 - i * (m.w / 4) - m.w / 8;
+            ctx.quadraticCurveTo(gx + 5, -m.h / 2 + 8 + floatY, gx, -m.h / 2 + floatY);
+          }
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = m.eyeColor;
+          ctx.beginPath();
+          ctx.arc(-5, -m.h / 2 - 2 + floatY, 4, 0, Math.PI * 2);
+          ctx.arc(5, -m.h / 2 - 2 + floatY, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#000';
+          ctx.beginPath();
+          ctx.arc(-4, -m.h / 2 - 2 + floatY, 2, 0, Math.PI * 2);
+          ctx.arc(6, -m.h / 2 - 2 + floatY, 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (m.name === 'skull') {
+          ctx.fillStyle = m.color;
+          ctx.beginPath();
+          ctx.arc(0, -m.h / 2 + 8 + floatY, m.w / 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillRect(-m.w / 4, -m.h / 2 + floatY, m.w / 2, m.h / 2);
+          // Eyes
+          ctx.fillStyle = m.eyeColor;
+          ctx.beginPath();
+          ctx.arc(-4, -m.h / 2 + 5 + floatY, 4, 0, Math.PI * 2);
+          ctx.arc(4, -m.h / 2 + 5 + floatY, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#000';
+          ctx.beginPath();
+          ctx.arc(-3, -m.h / 2 + 5 + floatY, 2, 0, Math.PI * 2);
+          ctx.arc(5, -m.h / 2 + 5 + floatY, 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+      function drawAttackEffect() {
+        if (!isAttacking) return;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, 1 - attackAnim / 15);
+        const ax = hero.x + hero.facing * 30;
+        const ay = hero.y - 30;
+        ctx.strokeStyle = '#7dd3fc';
+        ctx.lineWidth = 2;
+        for (let i = 0; i < 3; i++) {
+          ctx.beginPath();
+          ctx.arc(ax + i * 8 * hero.facing, ay - i * 5, 15 + i * 8, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      function drawParticles() {
+        particles.forEach(p => {
+          ctx.save();
+          ctx.globalAlpha = p.life / 30;
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        });
+      }
+
+      function drawGround() {
+        ctx.fillStyle = '#1a1a24';
+        ctx.fillRect(0, GROUND_Y, W, H - GROUND_Y);
+        ctx.strokeStyle = 'rgba(14,141,232,0.3)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, GROUND_Y);
+        ctx.lineTo(W, GROUND_Y);
+        ctx.stroke();
+        // Ground details
+        ctx.fillStyle = '#22222e';
+        for (let i = 0; i < W; i += 40) {
+          ctx.fillRect(i, GROUND_Y, 20, 3);
+        }
+      }
+
+      function drawBG() {
+        ctx.fillStyle = '#0a0a0f';
+        ctx.fillRect(0, 0, W, H);
+        // Stars
+        ctx.fillStyle = 'rgba(255,255,255,0.3)';
+        for (let i = 0; i < 30; i++) {
+          const sx = (i * 97 + 13) % W;
+          const sy = (i * 53 + 7) % (GROUND_Y - 20);
+          ctx.beginPath();
+          ctx.arc(sx, sy, 1, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function draw() {
+        ctx.save();
+        // Screen shake
+        if (screenShake > 0) {
+          ctx.translate(
+            (Math.random() - 0.5) * screenShake,
+            (Math.random() - 0.5) * screenShake
+          );
+        }
+        // Hit flash
+        if (hitFlash > 0) {
+          ctx.fillStyle = `rgba(239,68,68,${hitFlash * 0.1})`;
+          ctx.fillRect(0, 0, W, H);
+        }
+
+        drawBG();
+        drawGround();
+        drawParticles();
+
+        // Monsters
+        monsters.forEach(m => drawMonster(m));
+
+        // Attack effect
+        drawAttackEffect();
+
+        // Hero
+        drawStickFigure(hero.x, hero.y, hero.facing, isAttacking, attackAnim);
+        ctx.restore();
+      }
+
+      function update(dt) {
+        if (!isPlaying) return;
+
+        // Hero movement
+        hero.vx = 0;
+        if (keys.left) { hero.vx = -hero.speed; hero.facing = -1; hero.moving = true; }
+        if (keys.right) { hero.vx = hero.speed; hero.facing = 1; hero.moving = true; }
+        hero.x += hero.vx;
+        hero.x = Math.max(20, Math.min(W - 20, hero.x));
+
+        // Attack animation
+        if (isAttacking) {
+          attackAnim++;
+          if (attackAnim > 15) { isAttacking = false; attackAnim = 0; }
+        }
+        if (attackCooldown > 0) attackCooldown--;
+
+        // Screen shake decay
+        if (screenShake > 0) screenShake *= 0.8;
+        if (hitFlash > 0) hitFlash--;
+
+        // Particles
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.3;
+          p.life--;
+        });
+        particles = particles.filter(p => p.life > 0);
+
+        // Spawn monsters
+        spawnTimer++;
+        const spawnRate = Math.max(30, 90 - wave * 10);
+        if (spawnTimer >= spawnRate) {
+          spawnMonster();
+          spawnTimer = 0;
+        }
+
+        // Wave progression
+        waveTimer++;
+        if (waveTimer >= 600) {
+          wave++;
+          waveEl.textContent = wave;
+          waveTimer = 0;
+          // Spawn extra
+          spawnMonster();
+          spawnMonster();
+        }
+
+        // Move monsters
+        monsters.forEach(m => {
+          m.anim += 0.1;
+          m.x += m.dir * m.speed * (1 + wave * 0.1);
+          // Float effect for ghosts
+          if (m.float) {
+            m.y = GROUND_Y + Math.sin(m.anim * 0.5) * 8;
+          }
+        });
+
+        // Check collision with hero
+        monsters.forEach((m, i) => {
+          const dx = Math.abs(m.x - hero.x);
+          if (dx < m.w / 2 + 15) {
+            lives--;
+            livesEl.textContent = lives;
+            hitFlash = 10;
+            screenShake = 10;
+            spawnParticles(hero.x, hero.y - 24, '#ef4444', 10);
+            monsters.splice(i, 1);
+            if (lives <= 0) {
+              endGame();
+            }
+          }
+        });
+      }
+
+      function gameLoop(timestamp) {
+        const dt = timestamp - lastTime;
+        lastTime = timestamp;
+        update(dt);
+        draw();
+        if (isPlaying) {
+          animFrame = requestAnimationFrame(gameLoop);
+        }
+      }
+
+      function startGame() {
+        score = 0;
+        wave = 1;
+        lives = 3;
+        monsters = [];
+        particles = [];
+        spawnTimer = 0;
+        waveTimer = 0;
+        attackCooldown = 0;
+        isAttacking = false;
+        attackAnim = 0;
+        screenShake = 0;
+        hero.x = W / 2;
+        hero.facing = 1;
+        scoreEl.textContent = '0';
+        waveEl.textContent = '1';
+        livesEl.textContent = '3';
+        isPlaying = true;
+        gameOverOverlay.classList.add('hidden');
+        mobileControls.classList.remove('hidden');
+        startBtn.textContent = 'Playing...';
+        startBtn.disabled = true;
+        startBtn.classList.add('opacity-50');
+        lastTime = performance.now();
+        animFrame = requestAnimationFrame(gameLoop);
+      }
+
+      function endGame() {
+        isPlaying = false;
+        cancelAnimationFrame(animFrame);
+        if (score > bestScore) {
+          bestScore = score;
+          localStorage.setItem('stickHeroBest', bestScore);
+          bestEl.textContent = bestScore;
+        }
+        finalScoreEl.textContent = score;
+        finalWaveEl.textContent = wave;
+        gameOverOverlay.classList.remove('hidden');
+        startBtn.textContent = 'Start Game';
+        startBtn.disabled = false;
+        startBtn.classList.remove('opacity-50');
+        mobileControls.classList.add('hidden');
+      }
+
+      startBtn.addEventListener('click', startGame);
+      restartBtn.addEventListener('click', startGame);
+
+      // Draw initial frame
+      draw();
+    })();
+  </script>
+</body>
+</html>
