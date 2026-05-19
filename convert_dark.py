@@ -1,6 +1,6 @@
 """
 convert_dark.py - Regenerate all posts_html with the new dark theme design.
-Reference: https://theainest.com/ style - dark theme, modern aesthetics
+Reference: https://vivoaihub.com/ style - dark theme, modern aesthetics
 """
 import os
 import re
@@ -501,7 +501,7 @@ __TAGS__
     
     // Share links
     var title = '__TITLE_URL__';
-    var url = 'https://theainest.com/__FILENAME__';
+    var url = 'https://vivoaihub.com/__FILENAME__';
     document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url);
     document.getElementById('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
     document.getElementById('share-linkedin').href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title);
