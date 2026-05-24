@@ -14,6 +14,138 @@
  */
 
 const articles = [
+  // --- New high-quality articles (May 2026) ---
+  {
+    id: "ai-email-experiment",
+    title: "I Let AI Write My Emails for a Month. 15 Hours Saved, but Not Without Problems.",
+    excerpt: "I decided to hand over my inbox to AI. Over 200 emails later, some things genuinely surprised me — both good and bad.",
+    date: "2026-05-20",
+    category: "Productivity",
+    author: "Alex Chen",
+    tags: ["ai-email", "productivity", "experiment", "real-world"],
+    content: `
+      <p>Here's the thing. I hate writing emails. Not in some abstract "email is broken" way — I just find myself staring at a blank compose window for five minutes trying to figure out how to politely say "I need this by Friday" without sounding like a jerk.</p>
+      <p>So last month I decided to try something. Every single work email goes through AI first. Gmail responses, client follow-ups, cold pitches, even those awkward "circling back" messages. One month. Let's see what breaks.</p>
+
+      <h2>The Setup</h2>
+      <p>I used three tools. ChatGPT for drafting longer messages (proposals, project updates). Superhuman's built-in AI for quick replies. And Claude when I needed to sound more thoughtful — it's weirdly good at reading between the lines of an email thread.</p>
+      <p>Ground rules: I'd read everything before hitting send. No blind copy-pasting. If AI completely missed the tone, I'd rewrite manually and log it.</p>
+
+      <h2>Week 1: It Felt Like Cheating</h2>
+      <p>First few days were genuinely weird. I'd paste a messy three-line note into ChatGPT, ask it to turn it into a professional email, and within seconds I had something that would have taken me ten minutes to write.</p>
+      <p>My favorite moment came on day three. A client had sent a vaguely angry email about a delayed deliverable. Normally I'd spend twenty minutes crafting a diplomatic response. I fed the thread to Claude, asked it to acknowledge the frustration without over-apologizing, and got back something that was... actually better than what I would have written. More direct. Less defensive.</p>
+      <p>By Friday I'd cleared my inbox faster than any week in recent memory. The time I usually spent on email — about 45 minutes a day — dropped to maybe 15.</p>
+
+      <h2>Week 2: The Cracks Started Showing</h2>
+      <p>This is when I started noticing the patterns. AI really struggles with specific, context-heavy situations.</p>
+      <p>Case in point: I needed to email a designer about a color change on a landing page. The AI draft went on for three paragraphs about "aligning visual identity with brand strategy." The designer called me out immediately. "Did ChatGPT write this?" Yep. She was right. I rewrote it in one line: "Can we make the button #3366FF instead of #3399FF?" Done.</p>
+      <p>Another problem: AI has no memory of your actual relationship with people. It treats everyone the same — professionally polite. But with my co-founder, we usually open emails with inside jokes. The AI drafts felt stiff and out of character. I had to manually add the human bits back in.</p>
+
+      <h2>Week 3: Finding the Sweet Spot</h2>
+      <p>By the third week I'd figured out where AI helps and where it doesn't. Quick rules of thumb that emerged:</p>
+      <p>AI is great for: first drafts of anything, turning bullet points into paragraphs, translating technical details into client-friendly language, and handling repetitive follow-ups.</p>
+      <p>AI is useless for: emotionally charged conversations, anything requiring deep knowledge of a specific person or project history, and very short replies where you just need to say "got it, thanks."</p>
+      <p>I also noticed something unexpected. Reading AI-generated drafts actually made me a better writer. Seeing alternative phrasings of my own thoughts helped me spot where I tend to be too vague or too defensive. Some of the AI's structural habits rubbed off on me.</p>
+
+      <h2>The Numbers</h2>
+      <p>After 30 days: 237 emails sent with AI assistance. Average time per email dropped from 4.2 minutes to 1.8 minutes. Total time saved: roughly 15 hours over the month.</p>
+      <p>But here's the stat that actually matters: 11 emails needed complete rewrites because the AI draft was wrong in tone or substance. 6 recipients asked if I was using AI (and 2 of those weren't happy about it).</p>
+
+      <h2>Would I Do It Again?</h2>
+      <p>Yeah. But differently. I'm not handing my inbox to AI anymore — I'm using it as a writing assistant that happens to live in my email workflow. The key insight wasn't about speed. It was about using AI to handle the mechanical parts of writing so I could focus on the parts that actually need me: knowing what to say, and how to say it to this specific person.</p>
+      <p>If you're thinking about trying this, my advice: start with internal emails first. Don't AI-draft anything you wouldn't want someone to screenshot and post on Twitter. And for god's sake, read every word before you hit send.</p>
+    `
+  },
+  {
+    id: "ai-tools-actually-use",
+    title: "The 7 AI Tools I Keep Open All Day (and 3 I Already Deleted)",
+    excerpt: "Not the tools with flashy websites and VC funding. Just the ones that actually made it into my daily workflow and stayed there.",
+    date: "2026-05-18",
+    category: "AI Tools",
+    author: "Alex Chen",
+    tags: ["ai-tools", "productivity", "workflow", "tools"],
+    content: `
+      <p>Every week someone launches a new AI tool. Every week someone writes a listicle about "10 AI tools that will change your life." I've tried most of them. Most are fine. Some are genuinely good. Very few survive the first week on my desktop.</p>
+      <p>Here's what's actually running right now, and why it earned the spot.</p>
+
+      <h2>1. Claude (for thinking, not generating)</h2>
+      <p>I know, obvious. But here's why it stays: Claude is the only AI that doesn't feel like it's performing. When I paste in a messy draft and ask "what's wrong with this?" — it actually tells me. ChatGPT tends to say "this is great! here are some minor suggestions." Claude will point out that paragraph three contradicts paragraph one, and the conclusion doesn't follow from anything you wrote. That's what I need.</p>
+      <p>I use it 3-4 times a day, mostly as a writing editor and rubber duck for thinking through problems.</p>
+
+      <h2>2. Perplexity (the search engine replacement)</h2>
+      <p>I haven't opened Google for a work query in two months. Perplexity gives me answers with sources, which means I can actually verify things instead of trusting a confident-sounding AI hallucination. It's replaced roughly 80% of my Googling. The remaining 20% is when I need the most recent news or very specific documentation.</p>
+      <p>If you only try one tool from this list, make it Perplexity.</p>
+
+      <h2>3. Cursor (the thing that makes me feel like a real programmer)</h2>
+      <p>I'm not a developer by trade. I can write some Python, some JavaScript, but I'm slow. Cursor's AI autocomplete and chat features make me about 3x faster. More importantly, it explains things. When it suggests code, I can ask why it chose that approach. I've learned more about coding in three months of using Cursor than in a year of tutorials.</p>
+      <p>Not great for: large refactors. It sometimes gets lost in big codebases. But for writing new features or debugging, it's excellent.</p>
+
+      <h2>4. Notion AI (the note-taker I didn't know I needed)</h2>
+      <p>I was skeptical about this one. AI in a notes app sounds like a gimmick. But three specific features changed my mind: summarizing long meeting notes, turning messy bullet points into coherent paragraphs, and generating action items from a brainstorming session. These are tasks I used to spend 20 minutes on that now take 30 seconds.</p>
+      <p>Downside: it's not free, and the price adds up if you're not using it daily.</p>
+
+      <h2>5. Otter.ai (for when I zone out in meetings)</h2>
+      <p>I'll be honest — I zone out in long meetings. Otter transcribes everything and lets me search the transcript later. I don't use it for every call, but for anything over 30 minutes, it's essential. The AI summary goes into my Notion notes, and suddenly I have meeting notes I didn't actually take.</p>
+      <p>The free tier gives you 300 monthly minutes, which is enough for me.</p>
+
+      <h2>6. Midjourney (for blog images and nothing else)</h2>
+      <p>I don't use AI image generation for art. I use it because I need a blog header and I don't want to pay for stock photos or spend an hour on Canva. Midjourney consistently produces images that don't look like obvious AI slop. It's the only image tool I've kept after trying DALL-E, Stable Diffusion, and a few others.</p>
+      <p>Expensive though. $30/month for the plan I use. If you only need occasional images, the free alternatives are fine.</p>
+
+      <h2>7. Raycast AI (the swiss army knife)</h2>
+      <p>Raycast is a macOS launcher (like Spotlight but actually useful) with built-in AI features. I use it for quick translations, summarizing text I've highlighted, and tiny code snippets. It's not a tool I'd describe as "essential" — but it keeps proving useful in unexpected moments. The kind of tool you don't notice until it's gone.</p>
+      <p>Free tier covers most of what I need.</p>
+
+      <h2>Three I Already Deleted</h2>
+      <p><strong>Jasper.</strong> Good for marketing teams, overkill for individuals. Felt like using a rocket launcher to open a jar.</p>
+      <p><strong>Grammarly's AI features.</strong> I already have Claude for rewriting. The constant suggestions got annoying.</p>
+      <p><strong>Any AI meeting scheduler.</strong> I tried three. All of them sent weirdly phrased emails to people who then emailed me asking what was going on. Back to Calendly and manual timestamps.</p>
+
+      <h2>The Pattern I Noticed</h2>
+      <p>The tools I kept aren't the most powerful or the most hyped. They're the ones that solve one specific, recurring problem really well. Claude for editing, Perplexity for research, Cursor for coding. None of them try to "revolutionize" anything.</p>
+      <p>When you're picking AI tools, ignore the marketing. Ask: does this fix something I actually do every day? If the answer isn't obvious within the first hour of using it, you probably won't open it again.</p>
+    `
+  },
+  {
+    id: "ai-side-project-months",
+    title: "I Used AI to Build 3 Side Projects in a Weekend — Here's What Nobody Tells You",
+    excerpt: "Everyone's posting about launching apps in 24 hours with AI. I tried it. The reality is messier, more interesting, and honestly more useful than the hype.",
+    date: "2026-05-16",
+    category: "Productivity",
+    author: "Alex Chen",
+    tags: ["ai-coding", "side-project", "productivity", "real-world"],
+    content: `
+      <p>You've seen the tweets. "Built and launched a SaaS in 6 hours with Cursor!" "Shipped 4 apps this weekend!" It sounds magical. It also sounds like the kind of thing people say when they're selling a course.</p>
+      <p>So I tried it. Real projects. Not todo apps. Let me tell you what actually happened.</p>
+
+      <h2>Project 1: A Personal Dashboard (2 hours)</h2>
+      <p>The idea was simple: a single page that shows my calendar, today's tasks, weather, and a few key metrics from my projects. Nothing groundbreaking. I'd built similar things before, but they always took me a full day of wrestling with APIs and CSS.</p>
+      <p>With Cursor and Claude, I had a working prototype in about 90 minutes. The HTML came together fast. The JavaScript for fetching calendar data worked on the first try. I felt like a genius.</p>
+      <p>Then I tried to make it look good. Two more hours of tweaking padding, colors, and mobile layouts. AI suggestions were helpful but they kept making design decisions I didn't agree with. "How about a gradient background?" No. "Let's add rounded corners and shadows!" I already have those. The AI can code, but it has the design taste of a 2015 startup landing page.</p>
+      <p>End result: functional, ugly, I use it every day. Total time: ~4 hours. Without AI, probably 12+.</p>
+
+      <h2>Project 2: An RSS-to-Email Tool (6 hours)</h2>
+      <p>I wanted something that monitors specific RSS feeds and emails me summaries. Sounds simple. It's not.</p>
+      <p>The backend — parsing RSS, extracting article text, generating summaries — took about 2 hours with AI help. Claude handled the XML parsing logic perfectly. Cursor wrote a clean Python script that I would have struggled with for days.</p>
+      <p>Then came the email part. Setting up SMTP. Formatting HTML emails that don't go to spam. Handling errors when a feed is down. Each of these took an hour of back-and-forth with the AI, testing, fixing, testing again. The AI got me 70% of the way on each task, but the remaining 30% required understanding that the AI simply doesn't have — it doesn't know my mail server, doesn't know which feeds I care about, can't test whether the email actually lands in the inbox.</p>
+      <p>This is what the "built in 6 hours" tweets miss. AI writes the first draft brilliantly. But deployment, edge cases, and the last 20% of polish still need a human who understands what they're building.</p>
+      <p>End result: works, has been running for two weeks, sends me 3-5 daily summaries. Worth it. Total time: ~6 hours with AI, probably 20+ without.</p>
+
+      <h2>Project 3: The One That Failed (3 hours, abandoned)</h2>
+      <p>I wanted to build a Chrome extension that summarizes the current page with one click. Simple enough. I've seen a dozen of these.</p>
+      <p>AI wrote the extension boilerplate in minutes. The popup UI was done in 15 minutes. But then I hit a wall. The content extraction part — getting clean text from any webpage — turned out to be genuinely hard. The AI kept suggesting solutions that looked right but failed on edge cases: pages with heavy JavaScript, login-walled content, weirdly nested div structures.</p>
+      <p>After three hours of debugging with AI assistance, I realized something: the AI couldn't solve this because I couldn't clearly describe the problem. I didn't understand content scripts, DOM manipulation, or Chrome's security model well enough to ask the right questions.</p>
+      <p>I abandoned it. Not because AI failed — because I lacked the fundamental knowledge to guide it. The AI is a force multiplier for people who already know what they're doing. If you don't know the basics, it multiplies your confusion too.</p>
+
+      <h2>What Actually Changed My Mind</h2>
+      <p>The weekend taught me three things that the Twitter threads don't mention.</p>
+      <p>One: AI makes the easy parts trivial and the hard parts slightly easier. Writing boilerplate? Instant. Handling edge cases? Still takes human judgment.</p>
+      <p>Two: you still need to know what you're building. AI won't design your architecture or catch logical errors. It'll happily implement a fundamentally broken approach if you tell it to.</p>
+      <p>Three: the speed difference is real but it's not 100x. For the kind of work I do, AI makes me about 2-3x faster overall. Some tasks (boilerplate, research) are 10x faster. Others (debugging, deployment) are barely faster at all.</p>
+      <p>If you're considering using AI for side projects, my advice: start with something you already know how to build manually. Use AI to speed up the parts you understand. Don't use it to skip learning the fundamentals — that's how you end up with broken Chrome extensions and three hours of debugging something you can't explain.</p>
+      <p>And maybe stop reading those "built in 6 hours" tweets. They're leaving out the messy parts on purpose.</p>
+    `
+  },
   // --- Original articles ---
   {
     id: "getting-started-with-static-sites",
