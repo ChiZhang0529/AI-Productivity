@@ -241,8 +241,8 @@ POST_TEMPLATE = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>__TITLE__ | AINest</title>
-  <meta name="title" content="__TITLE__ | AINest">
+  <title>__TITLE__ | AI Productivity</title>
+  <meta name="title" content="__TITLE__ | AI Productivity">
   <meta name="description" content="__EXCERPT__">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
@@ -316,7 +316,7 @@ POST_TEMPLATE = """<!DOCTYPE html>
       <div class="flex justify-between items-center h-16">
         <a href="index.html" class="flex items-center gap-2 group">
           <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm shadow-lg" style="box-shadow: 0 0 20px rgba(14,141,232,0.3);">AI</div>
-          <span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">AINest</span>
+          <span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">AI Productivity</span>
         </a>
         <div class="hidden md:flex items-center gap-1">
           <a href="index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
@@ -434,7 +434,7 @@ __TAGS__
         <div class="md:col-span-2">
           <div class="flex items-center gap-2 mb-4">
             <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm">AI</div>
-            <span class="text-lg font-bold text-white">AINest</span>
+            <span class="text-lg font-bold text-white">AI Productivity</span>
           </div>
           <p class="text-gray-500 text-sm mb-5 max-w-xs leading-relaxed">Daily AI & tech insights for professionals who want to work smarter, not harder.</p>
           <div class="flex items-center gap-3">
@@ -461,7 +461,7 @@ __TAGS__
         </div>
       </div>
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-gray-600">© 2025 AINest. All rights reserved.</p>
+        <p class="text-xs text-gray-600">© 2025 AI Productivity. All rights reserved.</p>
         <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
       </div>
     </div>
@@ -525,7 +525,7 @@ def make_html(title, excerpt, cat, tags, body, fname, date_str):
     result = result.replace('__CONTENT__', body)
     result = result.replace('__TAGS__', tag_html)
     result = result.replace('__DATE__', date_display)
-    result = result.replace('__AUTHOR__', 'AINest Editorial')
+    result = result.replace('__AUTHOR__', 'Maye Zhang')
     result = result.replace('__READTIME__', str(read_time))
     result = result.replace('__FILENAME__', fname)
     result = result.replace('__TITLE_URL__', title)

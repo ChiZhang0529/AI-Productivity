@@ -1,0 +1,403 @@
+"""
+gen_missing_posts.py - Generate static HTML for articles that exist only in articles.js.
+Matches the POST_TEMPLATE from convert_dark.py for visual consistency.
+"""
+import os
+import re
+import json
+
+OUTPUT_DIR = "C:/Users/54463/WorkBuddy/2026-05-13-task-6/static-blog/posts_html"
+JS_FILE = "C:/Users/54463/WorkBuddy/2026-05-13-task-6/static-blog/js/articles.js"
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# The same POST_TEMPLATE from convert_dark.py, identical in structure
+POST_TEMPLATE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>__TITLE__ | AI Productivity</title>
+  <meta name="description" content="__EXCERPT__">
+  <meta name="author" content="AI Productivity">
+  <meta property="og:title" content="__TITLE__ | AI Productivity">
+  <meta property="og:description" content="__EXCERPT__">
+  <meta property="og:image" content="https://vivoaihub.com/og-image.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vivoaihub.com/posts_html/__FILENAME__">
+  <meta property="article:published_time" content="__DATE__">
+  <meta property="article:author" content="Maye Zhang">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="__TITLE__ | AI Productivity">
+  <meta name="twitter:description" content="__EXCERPT__">
+  <meta name="twitter:image" content="https://vivoaihub.com/og-image.jpg">
+  <link rel="canonical" href="https://vivoaihub.com/posts_html/__FILENAME__">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1514951008240422" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: { 50: '#e6f4ff', 100: '#b3e0ff', 200: '#80ccff', 300: '#4db8ff', 400: '#1aa4ff', 500: '#0e8de8', 600: '#0070c4', 700: '#0055a0', 800: '#003d7a', 900: '#002654' },
+            dark: { 50: '#6b7280', 100: '#4b5563', 200: '#374151', 300: '#2a2a38', 400: '#1f1f2e', 500: '#1a1a24', 600: '#15151d', 700: '#111118', 800: '#0d0d14', 900: '#0a0a0f' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0a0f; color: #e2e8f0; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0d0d14; }
+    ::-webkit-scrollbar-thumb { background: #2a2a38; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #374151; }
+    .accent-gradient { background: linear-gradient(135deg, #0e8de8 0%, #8b5cf6 100%); }
+    .category-badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+    .tag-pill { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; background: rgba(255,255,255,0.05); color: #94a3b8; border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s; }
+    .tag-pill:hover { background: rgba(14,141,232,0.1); color: #0e8de8; border-color: rgba(14,141,232,0.3); }
+    .share-btn { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; background: #1a1a24; color: #64748b; border: 1px solid #2a2a38; transition: all 0.2s; }
+    .share-btn:hover { color: white; border-color: rgba(14,141,232,0.5); background: rgba(14,141,232,0.1); }
+    .newsletter-input { background: #111118; border: 1px solid #2a2a38; color: #e2e8f0; outline: none; }
+    .newsletter-input:focus { border-color: rgba(14,141,232,0.5); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes accent-gradient-anim { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #f1f5f9; border-bottom: 1px solid #1f1f2e; padding-bottom: 0.75rem; }
+    .prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: #f1f5f9; }
+    .prose h4 { font-size: 1.125rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #f1f5f9; }
+    .prose p { margin-bottom: 1rem; color: #cbd5e1; line-height: 1.8; }
+    .prose ul { list-style-type: disc; list-style-position: inside; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .prose ol { list-style-type: decimal; list-style-position: inside; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .prose li { color: #cbd5e1; }
+    .prose strong { font-weight: 600; color: #f1f5f9; }
+    .prose em { font-style: italic; }
+    .prose blockquote { border-left: 3px solid #0e8de8; padding-left: 1rem; font-style: italic; color: #94a3b8; margin: 1.5rem 0; background: rgba(14,141,232,0.05); padding: 1rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose code { background: #1a1a24; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; font-family: 'Fira Code', 'Consolas', monospace; color: #7dd3fc; }
+    .prose pre { background: #0d0d14; border: 1px solid #22222e; color: #e2e8f0; padding: 1.25rem; border-radius: 0.75rem; overflow-x: auto; margin: 1.5rem 0; font-size: 0.875rem; line-height: 1.7; }
+    .prose pre code { background: transparent; padding: 0; color: inherit; }
+    .prose img { border-radius: 0.75rem; my-6; max-width: 100%; }
+    .prose hr { border-color: #1f1f2e; margin: 2rem 0; }
+    .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .prose th { border: 1px solid #2a2a38; background: #111118; padding: 0.625rem 1rem; text-align: left; font-weight: 600; color: #e2e8f0; }
+    .prose td { border: 1px solid #2a2a38; padding: 0.625rem 1rem; color: #cbd5e1; }
+    .prose tr:nth-child(even) { background: #0f0f18; }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl" style="background: rgba(10,10,15,0.8);">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm shadow-lg" style="box-shadow: 0 0 20px rgba(14,141,232,0.3);">AI</div>
+          <span class="text-lg font-bold text-white group-hover:text-brand-400 transition-colors">AI Productivity</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="../index.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
+          <a href="../blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Blog</a>
+          <a href="../about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">About</a>
+          <a href="../contact.html" class="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-lg" style="box-shadow: 0 0 20px rgba(0,112,196,0.3);">Contact</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-white/5 pt-3">
+        <div class="flex flex-col gap-1">
+          <a href="../index.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Home</a>
+          <a href="../blog.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">Blog</a>
+          <a href="../about.html" class="px-4 py-3 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors">About</a>
+          <a href="../contact.html" class="px-4 py-3 rounded-lg text-sm font-medium bg-brand-600 text-white mt-1">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow py-12 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8">
+        <ol class="flex items-center text-xs text-gray-600 space-x-2">
+          <li><a href="../index.html" class="hover:text-brand-400 transition-colors">Home</a></li>
+          <li><span class="text-gray-700">/</span></li>
+          <li><a href="../blog.html" class="hover:text-brand-400 transition-colors">Blog</a></li>
+          <li><span class="text-gray-700">/</span></li>
+          <li class="text-gray-400 truncate max-w-xs">__TITLE__</li>
+        </ol>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="category-badge bg-brand-500/10 text-brand-400 border border-brand-500/20">__CATEGORY__</span>
+          <span class="text-xs text-gray-600">__DATE__</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">__TITLE__</h1>
+        <p class="text-lg text-gray-400 leading-relaxed">__EXCERPT__</p>
+      </header>
+
+      <!-- Author -->
+      <div class="flex items-center gap-4 pb-8 mb-10 border-b border-white/5">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center text-white text-lg font-bold">M</div>
+        <div>
+          <p class="font-semibold text-white text-sm">__AUTHOR__</p>
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <span>__DATE__</span>
+            <span>·</span>
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              __READTIME__ min read
+            </span>
+          </div>
+        </div>
+        <div class="ml-auto hidden md:flex items-center gap-2">
+          <div class="w-20 h-1 rounded-full overflow-hidden" style="background:#22222e;">
+            <div id="reading-progress" class="h-full accent-gradient rounded-full transition-all duration-300" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="prose max-w-none">
+__CONTENT__
+      </div>
+
+      <!-- Tags -->
+      <div class="mt-12 pt-8 border-t border-white/5">
+        <div class="flex flex-wrap gap-2">
+__TAGS__
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div class="mt-10 p-6 rounded-2xl" style="background:#111118; border:1px solid rgba(255,255,255,0.05);">
+        <h3 class="text-sm font-semibold text-white mb-4">Share this article</h3>
+        <div class="flex gap-3">
+          <a id="share-twitter" href="#" target="_blank" class="share-btn" aria-label="Twitter">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+          </a>
+          <a id="share-linkedin" href="#" target="_blank" class="share-btn" aria-label="LinkedIn">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+          </a>
+          <a id="share-facebook" href="#" target="_blank" class="share-btn" aria-label="Facebook">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+          </a>
+          <button onclick="copyLink()" class="share-btn" aria-label="Copy link">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="mt-8 p-6 rounded-2xl" style="background:linear-gradient(135deg,#0c1a2e 0%,#0a0a0f 100%);border:1px solid rgba(14,141,232,0.2);">
+        <h3 class="text-base font-semibold text-white mb-1">Enjoyed this article?</h3>
+        <p class="text-gray-500 text-sm mb-4">Get more AI productivity insights delivered to your inbox.</p>
+        <form class="flex gap-2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed!';this.querySelector('button').classList.add('bg-emerald-600');this.querySelector('button').classList.remove('bg-brand-600');">
+          <input type="email" placeholder="your@email.com" required class="newsletter-input flex-grow px-3.5 py-2.5 rounded-xl text-sm">
+          <button type="submit" class="px-5 py-2.5 accent-gradient text-white font-medium text-sm rounded-xl hover:opacity-90 transition-all shadow-lg" style="box-shadow:0 0 20px rgba(14,141,232,0.25);">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg accent-gradient flex items-center justify-center text-white font-bold text-sm">AI</div>
+            <span class="text-lg font-bold text-white">AI Productivity</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-5 max-w-xs leading-relaxed">Daily AI & tech insights for professionals who want to work smarter, not harder.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background:#1a1a24;color:#64748b;border:1px solid #2a2a38;" aria-label="Twitter"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+            <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background:#1a1a24;color:#64748b;border:1px solid #2a2a38;" aria-label="GitHub"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg></a>
+            <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background:#1a1a24;color:#64748b;border:1px solid #2a2a38;" aria-label="LinkedIn"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="../index.html" class="text-sm text-gray-500 hover:text-white transition-colors">Home</a></li>
+            <li><a href="../blog.html" class="text-sm text-gray-500 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="../about.html" class="text-sm text-gray-500 hover:text-white transition-colors">About</a></li>
+            <li><a href="../contact.html" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="../privacy.html" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="../terms.html" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-600">&copy; 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    
+    // Copy link
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        var btn = event.currentTarget;
+        btn.innerHTML = '<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+        btn.style.borderColor = 'rgba(16,185,129,0.5)';
+        setTimeout(function() {
+          btn.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>';
+          btn.style.borderColor = '#2a2a38';
+        }, 2000);
+      });
+    }
+    
+    // Reading progress
+    function updateProgress() {
+      var article = document.querySelector('.prose');
+      var bar = document.getElementById('reading-progress');
+      if (!article || !bar) return;
+      var top = article.offsetTop;
+      var height = article.offsetHeight;
+      var scrolled = window.scrollY - top + window.innerHeight / 2;
+      var pct = Math.max(0, Math.min(100, (scrolled / height) * 100));
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress);
+    
+    // Share links
+    var title = '__TITLE_URL__';
+    var url = 'https://vivoaihub.com/posts_html/__FILENAME__';
+    document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url);
+    document.getElementById('share-facebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+    document.getElementById('share-linkedin').href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title);
+  </script>
+</body>
+</html>"""
+
+def clean_old_classes(html_content):
+    """Remove old light-theme Tailwind classes from HTML content."""
+    # Remove class attributes with old light-theme classes
+    replacements = [
+        ('class="mb-4"', ''),
+        (' class="mb-4"', ''),
+        ('class="text-2xl font-bold mt-8 mb-4 text-gray-900"', ''),
+        ('class="text-xl font-semibold mt-6 mb-3 text-gray-900"', ''),
+        ('class="list-disc list-inside mb-4 space-y-2"', ''),
+        ('class="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-6"', ''),
+        ('class="text-lg font-semibold mt-6 mb-2 text-gray-900"', ''),
+        ('class="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono text-gray-800"', ''),
+        ('class="border-gray-200 my-8"', ''),
+    ]
+    result = html_content
+    for old, new in replacements:
+        result = result.replace(old, new)
+    return result
+
+def make_html(title, excerpt, cat, tags, body, fname, date_str):
+    tag_html = '\n'.join(f'          <span class="tag-pill">{t}</span>' for t in tags)
+    
+    # Count words in HTML content (rough)
+    word_count = len(re.sub(r'<[^>]+>', ' ', body).split())
+    read_time = max(1, word_count // 200)
+    
+    result = POST_TEMPLATE
+    result = result.replace('__TITLE__', title)
+    result = result.replace('__EXCERPT__', excerpt)
+    result = result.replace('__CATEGORY__', cat)
+    result = result.replace('__CONTENT__', body)
+    result = result.replace('__TAGS__', tag_html)
+    result = result.replace('__DATE__', date_str)
+    result = result.replace('__AUTHOR__', 'Maye Zhang')
+    result = result.replace('__READTIME__', str(read_time))
+    result = result.replace('__FILENAME__', fname)
+    result = result.replace('__TITLE_URL__', title)
+    return result
+
+def extract_articles_from_js(js_content):
+    """Extract article objects from the JavaScript array."""
+    articles = []
+    
+    # Find all article blocks using regex
+    # Match from "{ id:" to the closing "}"
+    pattern = r'\{\s*\n\s*id:\s*"([^"]+)",\s*\n\s*title:\s*"([^"]+)",\s*\n\s*excerpt:\s*"([^"]+)",\s*\n\s*date:\s*"([^"]+)",\s*\n\s*category:\s*"([^"]+)",\s*\n\s*author:\s*"[^"]+",\s*\n\s*tags:\s*\[([^\]]+)\],\s*\n\s*content:\s*`\n(.*?)\n\s*`\s*\n\s*\}'
+    
+    matches = re.findall(pattern, js_content, re.DOTALL)
+    
+    for match in matches:
+        article_id, title, excerpt, date, category, tags_str, content = match
+        
+        # Parse tags
+        tags = re.findall(r'"([^"]+)"', tags_str)
+        
+        # Clean up content
+        content = content.strip()
+        content = clean_old_classes(content)
+        
+        articles.append({
+            'id': article_id,
+            'title': title,
+            'excerpt': excerpt,
+            'date': date,
+            'category': category,
+            'tags': tags,
+            'content': content
+        })
+    
+    return articles
+
+def main():
+    with open(JS_FILE, 'r', encoding='utf-8') as f:
+        js_content = f.read()
+    
+    articles = extract_articles_from_js(js_content)
+    print(f'Found {len(articles)} articles in articles.js')
+    
+    # Get existing post filenames
+    existing = set(os.listdir(OUTPUT_DIR))
+    
+    generated = 0
+    for article in articles:
+        fname = article['id'] + '.html'
+        
+        # Also try with number prefix
+        # Check if already exists
+        matching = [f for f in existing if f.endswith('-' + fname)]
+        
+        if fname in existing or matching:
+            continue  # Already exists
+        
+        html = make_html(
+            article['title'],
+            article['excerpt'],
+            article['category'],
+            article['tags'],
+            article['content'],
+            fname,
+            article['date']
+        )
+        
+        out_path = os.path.join(OUTPUT_DIR, fname)
+        with open(out_path, 'w', encoding='utf-8') as f:
+            f.write(html)
+        
+        print(f'  Generated: {fname} — {article["category"]} — {article["title"][:50]}...')
+        generated += 1
+    
+    print(f'\nDone! {generated} new files generated in {OUTPUT_DIR}/')
+
+if __name__ == '__main__':
+    main()

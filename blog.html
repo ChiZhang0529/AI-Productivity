@@ -27,6 +27,7 @@
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://vivoaihub.com/blog.html">
+  <link rel="alternate" type="application/rss+xml" title="AI Productivity RSS Feed" href="https://vivoaihub.com/rss.xml">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
@@ -224,12 +225,12 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-wrap gap-2" id="category-filters">
           <button onclick="filterArticles('all')" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-brand-600 text-white transition-all" data-cat="all">All</button>
-          <button onclick="filterArticles('ai productivity')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai productivity">AI Productivity</button>
-          <button onclick="filterArticles('ai tools')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai tools">AI Tools</button>
-          <button onclick="filterArticles('ai tips')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai tips">AI Tips</button>
-          <button onclick="filterArticles('ai writing')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai writing">AI Writing</button>
+          <button onclick="filterArticles('ai-productivity')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai-productivity">AI Productivity</button>
+          <button onclick="filterArticles('ai-tools')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai-tools">AI Tools</button>
+          <button onclick="filterArticles('ai-tips')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai-tips">AI Tips</button>
+          <button onclick="filterArticles('ai-writing')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai-writing">AI Writing</button>
           <button onclick="filterArticles('productivity')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="productivity">Productivity</button>
-          <button onclick="filterArticles('ai creative')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai creative">AI Creative</button>
+          <button onclick="filterArticles('ai-creative')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-dark-600 text-gray-400 hover:bg-dark-500 hover:text-gray-300 transition-all" data-cat="ai-creative">AI Creative</button>
         </div>
       </div>
     </section>
@@ -306,8 +307,8 @@
           <h4 class="text-sm font-semibold text-white mb-4 uppercase tracking-wider">Legal</h4>
           <ul class="space-y-2.5">
             <li><a href="privacy.html" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
-            <li><a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Cookie Policy</a></li>
+            <li><a href="terms.html" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="privacy.html" class="text-sm text-gray-500 hover:text-white transition-colors">Cookie Policy</a></li>
           </ul>
         </div>
       </div>
@@ -476,7 +477,9 @@
       let filtered = articles;
       
       if (currentCategory !== 'all') {
-        filtered = articles.filter(a => (a.category || '').toLowerCase().includes(currentCategory));
+        // Convert hyphens to spaces for matching (e.g., ai-productivity → ai productivity)
+        const term = currentCategory.replace(/-/g, ' ');
+        filtered = articles.filter(a => (a.category || '').toLowerCase().includes(term));
       }
       
       const sorted = sortArticles(filtered);

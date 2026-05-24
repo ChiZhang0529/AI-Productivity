@@ -14,6 +14,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://vivoaihub.com/blog.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vivoaihub.com/terms.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://vivoaihub.com/contact.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -27,6 +39,24 @@
   </url>
 
   <!-- Blog Posts -->
+  <url>
+    <loc>https://vivoaihub.com/article.html?id=ai-email-experiment</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vivoaihub.com/article.html?id=ai-tools-actually-use</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vivoaihub.com/article.html?id=ai-side-project-months</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://vivoaihub.com/article.html?id=getting-started-with-static-sites</loc>
     <lastmod>2026-05-14</lastmod>
@@ -165,5 +195,11 @@
     <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vivoaihub.com/search.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
