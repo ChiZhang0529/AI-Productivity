@@ -17,15 +17,11 @@
     <atom:link href="https://vivoaihub.com/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>I Let AI Write My Emails for a Month. 15 Hours Saved, but Not Without Problems.</title>
-      <link>https://vivoaihub.com/article.html?id=ai-email-experiment</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-email-experiment</guid>
+      <link>https://vivoaihub.com/posts_html/ai-email-experiment.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/ai-email-experiment.html</guid>
       <description>I decided to hand over my inbox to AI. Over 200 emails later, some things genuinely surprised me — both good and bad.
 
-Here&#x27;s the thing. I hate writing emails. Not in some abstract &quot;email is broken&quot; way — I just find myself staring at a blank compose window for five minutes trying to figure out how to politely say &quot;I need this by Friday&quot; without sounding like a jerk.
-      So last month I decided to try something. Every single work email goes through AI first. Gmail responses, client follow-ups, cold pitches, even those awkward &quot;circling back&quot; messages. One month. Let&#x27;s see what breaks.
-
-      The Setup
-      I ...</description>
+Here&#x27;s the thing. I hate writing emails. Not in some abstract &quot;email is broken&quot; way — I just find myself staring at a blank compose window for five minutes trying to figure out how to politely say &quot;I need this by Friday&quot; without sounding like a jerk. So last month I decided to try something. Every single work email goes through AI first. Gmail responses, client follow-ups, cold pitches, even those awkward &quot;circling back&quot; messages. One month. Let&#x27;s see what breaks. The Setup I used three tools. C...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
       <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
       <category>ai-email</category>
@@ -36,15 +32,11 @@ Here&#x27;s the thing. I hate writing emails. Not in some abstract &quot;email i
     </item>
     <item>
       <title>The 7 AI Tools I Keep Open All Day (and 3 I Already Deleted)</title>
-      <link>https://vivoaihub.com/article.html?id=ai-tools-actually-use</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-tools-actually-use</guid>
+      <link>https://vivoaihub.com/posts_html/ai-tools-actually-use.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/ai-tools-actually-use.html</guid>
       <description>Not the tools with flashy websites and VC funding. Just the ones that actually made it into my daily workflow and stayed there.
 
-Every week someone launches a new AI tool. Every week someone writes a listicle about &quot;10 AI tools that will change your life.&quot; I&#x27;ve tried most of them. Most are fine. Some are genuinely good. Very few survive the first week on my desktop.
-      Here&#x27;s what&#x27;s actually running right now, and why it earned the spot.
-
-      1. Claude (for thinking, not generating)
-      I know, obvious. But here&#x27;s why it stays: Claude is the only AI that doesn&#x27;t feel like it&#x27;s performing. When I paste in a messy dr...</description>
+Every week someone launches a new AI tool. Every week someone writes a listicle about &quot;10 AI tools that will change your life.&quot; I&#x27;ve tried most of them. Most are fine. Some are genuinely good. Very few survive the first week on my desktop. Here&#x27;s what&#x27;s actually running right now, and why it earned the spot. 1. Claude (for thinking, not generating) I know, obvious. But here&#x27;s why it stays: Claude is the only AI that doesn&#x27;t feel like it&#x27;s performing. When I paste in a messy draft and ask &quot;what&#x27;s...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
       <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
       <category>ai-tools</category>
@@ -55,15 +47,11 @@ Every week someone launches a new AI tool. Every week someone writes a listicle 
     </item>
     <item>
       <title>I Used AI to Build 3 Side Projects in a Weekend — Here&#x27;s What Nobody Tells You</title>
-      <link>https://vivoaihub.com/article.html?id=ai-side-project-months</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-side-project-months</guid>
+      <link>https://vivoaihub.com/posts_html/ai-side-project-months.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/ai-side-project-months.html</guid>
       <description>Everyone&#x27;s posting about launching apps in 24 hours with AI. I tried it. The reality is messier, more interesting, and honestly more useful than the hype.
 
-You&#x27;ve seen the tweets. &quot;Built and launched a SaaS in 6 hours with Cursor!&quot; &quot;Shipped 4 apps this weekend!&quot; It sounds magical. It also sounds like the kind of thing people say when they&#x27;re selling a course.
-      So I tried it. Real projects. Not todo apps. Let me tell you what actually happened.
-
-      Project 1: A Personal Dashboard (2 hours)
-      The idea was simple: a single page that shows my calendar, today&#x27;s tasks, weather, and a few key metrics from my projects. Nothing groundbreaking. I...</description>
+You&#x27;ve seen the tweets. &quot;Built and launched a SaaS in 6 hours with Cursor!&quot; &quot;Shipped 4 apps this weekend!&quot; It sounds magical. It also sounds like the kind of thing people say when they&#x27;re selling a course. So I tried it. Real projects. Not todo apps. Let me tell you what actually happened. Project 1: A Personal Dashboard (2 hours) The idea was simple: a single page that shows my calendar, today&#x27;s tasks, weather, and a few key metrics from my projects. Nothing groundbreaking. I&#x27;d built similar th...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
       <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
       <category>ai-coding</category>
@@ -74,398 +62,344 @@ You&#x27;ve seen the tweets. &quot;Built and launched a SaaS in 6 hours with Cur
     </item>
     <item>
       <title>How to Use ChatGPT to Write Daily To-Do Lists</title>
-      <link>https://vivoaihub.com/article.html?id=chatgpt-daily-todo</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=chatgpt-daily-todo</guid>
-      <description>Most people approach their to-do list the same way every morning: stare at a blank screen. ChatGPT can help you build better lists without the mental overhead.
+      <link>https://vivoaihub.com/posts_html/01-chatgpt-daily-todo.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/01-chatgpt-daily-todo.html</guid>
+      <description>Most people approach their to-do list the same way every morning: stare at a blank screen, type whatever comes to mind, then wonder why they never finish anything. If that sounds familiar, ChatGPT can
 
-Most people approach their to-do list the same way every morning: stare at a blank screen, type whatever comes to mind, then wonder why they never finish anything. If that sounds familiar, ChatGPT can help you build better lists without the mental overhead.
-      Why Your To-Do List Probably Isn&#x27;t Working
-      The problem isn&#x27;t discipline. It&#x27;s structure. A good to-do list does three things: captures everything without overwhelm, prioritizes realistically, and breaks down big tasks into smaller...</description>
+Most people approach their to-do list the same way every morning: stare at a blank screen, type whatever comes to mind, then wonder why they never finish anything. If that sounds familiar, ChatGPT can help you build better lists without the mental overhead. Why Your To-Do List Probably Isn&#x27;t Working The problem isn&#x27;t discipline. It&#x27;s structure. A good to-do list does three things: captures everything without overwhelm, prioritizes realistically, and breaks down big tasks into smaller steps. Most...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <category>chatgpt</category>
-      <category>todo</category>
-      <category>planning</category>
-      <category>productivity</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Chatgpt</category>
+      <category>Daily</category>
+      <category>Lists</category>
+      <category>People</category>
+      <category>Approach</category>
+      <category>List</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Best Free AI Tools for Note Taking in 2026</title>
-      <link>https://vivoaihub.com/article.html?id=free-ai-note-taking</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=free-ai-note-taking</guid>
-      <description>The average professional attends 62 meetings per month. That&#x27;s a lot of information flying past your ears that you&#x27;ll never remember. AI-assisted tools can help you find meaning in your notes.
+      <link>https://vivoaihub.com/posts_html/02-free-ai-note-taking.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/02-free-ai-note-taking.html</guid>
+      <description>The average professional attends 62 meetings per month. That&#x27;s a lot of information flying past your ears that you&#x27;ll never remember. Note-taking apps helped for a while, but 2026 brought something be
 
-The average professional attends 62 meetings per month. That&#x27;s a lot of information flying past your ears that you&#x27;ll never remember. Note-taking apps helped for a while, but 2026 brought something better: AI-assisted tools that don&#x27;t just store your notes—they help you find meaning in them.
-      What Changed in 2026
-      Last year, most AI note tools were glorified transcription services. Now the best free options actually understand context, extract action items, and surface connections betw...</description>
+The average professional attends 62 meetings per month. That&#x27;s a lot of information flying past your ears that you&#x27;ll never remember. Note-taking apps helped for a while, but 2026 brought something better: AI-assisted tools that don&#x27;t just store your notes—they help you find meaning in them. What Changed in 2026 Last year, most AI note tools were glorified transcription services. You talked, they typed, you got a wall of text. Now the best free options actually understand context, extract action...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <category>note-taking</category>
-      <category>ai tools</category>
-      <category>productivity</category>
-      <category>2026</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Best</category>
+      <category>Free</category>
+      <category>Tools</category>
+      <category>Note</category>
+      <category>Taking</category>
+      <category>Average</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Simple AI Productivity Hacks for Beginners</title>
-      <link>https://vivoaihub.com/article.html?id=ai-productivity-hacks</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-productivity-hacks</guid>
-      <description>You don&#x27;t need to overhaul your entire workflow to benefit from AI. Small, specific uses often deliver the biggest returns. Here are the easiest ways to get started.
+      <link>https://vivoaihub.com/posts_html/03-ai-productivity-hacks.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/03-ai-productivity-hacks.html</guid>
+      <description>You don&#x27;t need to overhaul your entire workflow to benefit from AI. Small, specific uses often deliver the biggest returns. Here are the easiest ways to get started. Before diving into any tool, write
 
-You don&#x27;t need to overhaul your entire workflow to benefit from AI. Small, specific uses often deliver the biggest returns. Here are the easiest ways to get started.
-      Start With One Frustration
-      Before diving into any tool, write down the task that frustrates you most. Trying to &quot;use AI more&quot; is too vague. &quot;Use AI to reduce my Monday morning email backlog from 2 hours to 30 minutes&quot; is specific enough to measure.
-      Hack #1: The Five-Minute Email Draft
-      Instead of staring at a ...</description>
+You don&#x27;t need to overhaul your entire workflow to benefit from AI. Small, specific uses often deliver the biggest returns. Here are the easiest ways to get started. Start With One Frustration Before diving into any tool, write down the task that frustrates you most. Is it writing weekly reports? Sorting through emails? Planning content? Pick one. Trying to &quot;use AI more&quot; is too vague. &quot;Use AI to reduce my Monday morning email backlog from 2 hours to 30 minutes&quot; is specific enough to measure. Hac...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <category>ai</category>
-      <category>productivity</category>
-      <category>beginners</category>
-      <category>hacks</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Simple</category>
+      <category>Productivity</category>
+      <category>Hacks</category>
+      <category>Beginners</category>
+      <category>Don</category>
+      <category>Overhaul</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>How to Summarize Long Articles with AI for Free</title>
-      <link>https://vivoaihub.com/article.html?id=summarize-articles-ai</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=summarize-articles-ai</guid>
-      <description>You have 47 bookmarks. Maybe 147. Most of them are articles you meant to read when you have time—which, let&#x27;s be honest, means never. AI can help you extract key points.
+      <link>https://vivoaihub.com/posts_html/04-summarize-articles-ai.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/04-summarize-articles-ai.html</guid>
+      <description>You have 47 bookmarks. Maybe 147. Most of them are articles you meant to read 
 
-You have 47 bookmarks. Maybe 147. Most of them are articles you meant to read &quot;when you have time&quot;—which, let&#x27;s be honest, means never. AI can help you extract the key points from those long reads without actually reading every word.
-      Why Summarize Instead of Reading
-      Not everything deserves deep attention. Industry news, competitor analysis, research roundups—these often contain one or two useful ideas buried in thousands of words. Summarization lets you decide if the full article is ...</description>
+You have 47 bookmarks. Maybe 147. Most of them are articles you meant to read &quot;when you have time&quot;—which, let&#x27;s be honest, means never. AI can help you extract the key points from those long reads without actually reading every word. Why Summarize Instead of Reading Not everything deserves deep attention. Industry news, competitor analysis, research roundups—these often contain one or two useful ideas buried in thousands of words. Summarization lets you decide if the full article is worth your t...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
-      <category>summarize</category>
-      <category>ai</category>
-      <category>reading</category>
-      <category>productivity</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Summarize</category>
+      <category>Long</category>
+      <category>Articles</category>
+      <category>Free</category>
+      <category>Bookmarks</category>
+      <category>Maybe</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>AI Tools to Speed Up Email Writing</title>
-      <link>https://vivoaihub.com/article.html?id=ai-email-writing</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-email-writing</guid>
-      <description>The average office worker spends 28% of their workday on email. That&#x27;s nearly three hours every day typing, editing, and re-reading messages. AI can&#x27;t eliminate email, but it can cut the time you spend on each one.
+      <link>https://vivoaihub.com/posts_html/05-ai-email-writing.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/05-ai-email-writing.html</guid>
+      <description>The average office worker spends 28% of their workday on email. That&#x27;s nearly three hours every day typing, editing, and re-reading messages. AI can&#x27;t eliminate email, but it can significantly cut the
 
-The average office worker spends 28% of their workday on email. That&#x27;s nearly three hours every day typing, editing, and re-reading messages. AI can&#x27;t eliminate email, but it can significantly cut the time you spend on each one.
-      The Two Types of Email Problems
-      Type 1: Blank page paralysis—you know what you want to say but can&#x27;t get started.
-      Type 2: Slow drafting—you can write emails fine, but they take too long to get right.
-      Free Tools That Work
-      ChatGPT for Blank Pa...</description>
+The average office worker spends 28% of their workday on email. That&#x27;s nearly three hours every day typing, editing, and re-reading messages. AI can&#x27;t eliminate email, but it can significantly cut the time you spend on each one. The Two Types of Email Problems Before choosing a tool, identify your problem: Type 1: Blank page paralysis — You know what you want to say but can&#x27;t get started. Type 2: Slow drafting — You can write emails fine, but they take too long to get right. Different problems n...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
-      <category>email</category>
-      <category>ai</category>
-      <category>productivity</category>
-      <category>writing</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Tools</category>
+      <category>Speed</category>
+      <category>Email</category>
+      <category>Writing</category>
+      <category>Average</category>
+      <category>Office</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>How to Use AI to Organize Study Notes</title>
-      <link>https://vivoaihub.com/article.html?id=ai-study-notes</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-study-notes</guid>
-      <description>Most students&#x27; study notes look like a tornado hit a photocopier. Highlighting everything means highlighting nothing. AI can transform messy notes into something you can actually study from.
+      <link>https://vivoaihub.com/posts_html/06-ai-study-notes.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/06-ai-study-notes.html</guid>
+      <description>Most students&#x27; study notes look like a tornado hit a photocopier. Highlighting everything means highlighting nothing. AI won&#x27;t take notes for you, but it can transform messy, overwhelming notes into s
 
-Most students&#x27; study notes look like a tornado hit a photocopier. Highlighting everything means highlighting nothing. AI can transform messy, overwhelming notes into something you can actually study from.
-      The Problem with Typical Note-Taking
-      You sit through a lecture, write everything down, end up with 15 pages of fragmented sentences. Then exam week arrives and you&#x27;re staring at a wall of text with no idea what matters.
-      Step-by-Step: Transform Messy Notes
-      Step 1: Dump Ev...</description>
+Most students&#x27; study notes look like a tornado hit a photocopier. Highlighting everything means highlighting nothing. AI won&#x27;t take notes for you, but it can transform messy, overwhelming notes into something you can actually study from. The Problem with Typical Note-Taking Here&#x27;s what usually happens: you sit through a lecture, write everything down, end up with 15 pages of fragmented sentences. Then exam week arrives and you&#x27;re staring at a wall of text with no idea what matters. The issue isn...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      <category>study</category>
-      <category>notes</category>
-      <category>ai</category>
-      <category>students</category>
-      <category>learning</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Organize</category>
+      <category>Study</category>
+      <category>Notes</category>
+      <category>Students</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Free AI Image Tools for Personal Use</title>
-      <link>https://vivoaihub.com/article.html?id=free-ai-image-tools</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=free-ai-image-tools</guid>
-      <description>You don&#x27;t need to be a designer to create decent visuals anymore. AI image generators have become genuinely accessible in 2026, with free options that don&#x27;t require a credit card or technical expertise.
+      <link>https://vivoaihub.com/posts_html/07-free-ai-image-tools.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/07-free-ai-image-tools.html</guid>
+      <description>You don&#x27;t need to be a designer to create decent visuals anymore. AI image generators have become genuinely accessible in 2026, with free options that don&#x27;t require a credit card or technical expertis
 
-You don&#x27;t need to be a designer to create decent visuals anymore. AI image generators have become genuinely accessible in 2026, with free options that don&#x27;t require a credit card or technical expertise.
-      The Best Free Options
-      1. Microsoft Copilot (formerly Bing Image Creator)
-      Cost: Free with Microsoft account | Quality: Excellent | Daily limit: 15 boosts
-      This is probably the best starting point for beginners. The interface is straightforward: type what you want, wait 10-30...</description>
+You don&#x27;t need to be a designer to create decent visuals anymore. AI image generators have become genuinely accessible in 2026, with free options that don&#x27;t require a credit card or technical expertise. Here&#x27;s what actually works for personal projects. Why AI Images for Personal Use? Maybe you want to illustrate a family newsletter, create custom birthday cards, design social media posts, or make a unique gift. Professional design software costs money and has a steep learning curve. These free t...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      <category>ai</category>
-      <category>images</category>
-      <category>design</category>
-      <category>creative</category>
-      <category>free</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Free</category>
+      <category>Image</category>
+      <category>Tools</category>
+      <category>Personal</category>
+      <category>Don</category>
+      <category>Designer</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Best AI Prompt Tips for Better Results</title>
-      <link>https://vivoaihub.com/article.html?id=ai-prompt-tips</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-prompt-tips</guid>
-      <description>The difference between mediocre AI outputs and excellent ones usually comes down to how you ask. Prompt engineering isn&#x27;t about tricking the AI—it&#x27;s about communicating clearly.
+      <link>https://vivoaihub.com/posts_html/08-ai-prompt-tips.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/08-ai-prompt-tips.html</guid>
+      <description>The difference between mediocre AI outputs and excellent ones usually comes down to how you ask. Prompt engineering isn&#x27;t about tricking the AI—it&#x27;s about communicating clearly. Here&#x27;s what actually w
 
-The difference between mediocre AI outputs and excellent ones usually comes down to how you ask. Prompt engineering isn&#x27;t about tricking the AI—it&#x27;s about communicating clearly.
-      The Foundation: Specificity Beats Cleverness
-      &quot;Write something&quot; gets you generic output. &quot;Write a 150-word LinkedIn post announcing our team&#x27;s Q3 product launch, targeting non-technical stakeholders, with a tone that&#x27;s confident but not arrogant&quot; gets you something usable.
-      Tip 1: Define the Output Format...</description>
+The difference between mediocre AI outputs and excellent ones usually comes down to how you ask. Prompt engineering isn&#x27;t about tricking the AI—it&#x27;s about communicating clearly. Here&#x27;s what actually works. The Foundation: specificity beats cleverness &quot;Write something&quot; gets you generic output. &quot;Write a 150-word LinkedIn post announcing our team&#x27;s Q3 product launch, targeting non-technical stakeholders, with a tone that&#x27;s confident but not arrogant&quot; gets you something usable. The more context you ...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <category>ai</category>
-      <category>prompts</category>
-      <category>tips</category>
-      <category>productivity</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Best</category>
+      <category>Prompt</category>
+      <category>Tips</category>
+      <category>Better</category>
+      <category>Results</category>
+      <category>Difference</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>How to Avoid AI Writing Sounding Robotic</title>
-      <link>https://vivoaihub.com/article.html?id=avoid-ai-robotic</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=avoid-ai-robotic</guid>
-      <description>You&#x27;ve seen it. That slightly off quality—too formal, too perfect, too many buzzwords. AI-generated text has a recognizable fingerprint. Here&#x27;s how to fix that.
+      <link>https://vivoaihub.com/posts_html/09-avoid-ai-robotic.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/09-avoid-ai-robotic.html</guid>
+      <description>You&#x27;ve seen it. That slightly off quality—too formal, too perfect, too many buzzwords. AI-generated text has a recognizable fingerprint, and readers can usually sense it even when they can&#x27;t explain w
 
-You&#x27;ve seen it. That slightly off quality—too formal, too perfect, too many buzzwords. AI-generated text has a recognizable fingerprint, and readers can usually sense it. Here&#x27;s how to fix that.
-      Why AI Writing Sounds Artificial
-      AI optimizes for &quot;correct.&quot; It produces grammatically perfect, logically structured text with no personality quirks. But human writing isn&#x27;t like that.
-      The Five Biggest Giveaways (And Fixes)
-      1. Generic Transitions
-      AI loves: &quot;Furthermore,&quot; &quot;Ad...</description>
+You&#x27;ve seen it. That slightly off quality—too formal, too perfect, too many buzzwords. AI-generated text has a recognizable fingerprint, and readers can usually sense it even when they can&#x27;t explain why. Here&#x27;s how to fix that. Why AI Writing Sounds Artificial AI optimizes for &quot;correct.&quot; It produces grammatically perfect, logically structured text with no personality quirks, no sentence fragments, no casual asides. But human writing isn&#x27;t like that. Human writing has rhythm, preference, contradi...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <category>ai</category>
-      <category>writing</category>
-      <category>tips</category>
-      <category>avoid</category>
-      <category>robotic</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Avoid</category>
+      <category>Writing</category>
+      <category>Sounding</category>
+      <category>Robotic</category>
+      <category>Slightly</category>
+      <category>Off</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>AI Tools for Quick Spreadsheet Analysis</title>
-      <link>https://vivoaihub.com/article.html?id=ai-spreadsheet-analysis</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-spreadsheet-analysis</guid>
-      <description>You don&#x27;t need to be a data scientist to get insights from spreadsheets. AI has made spreadsheet analysis dramatically more accessible—if you know which tools to use.
+      <link>https://vivoaihub.com/posts_html/10-ai-spreadsheet-analysis.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/10-ai-spreadsheet-analysis.html</guid>
+      <description>You don&#x27;t need to be a data scientist to get insights from spreadsheets. AI has made spreadsheet analysis dramatically more accessible—if you know which tools to use and how to ask the right questions
 
-You don&#x27;t need to be a data scientist to get insights from spreadsheets. AI has made spreadsheet analysis dramatically more accessible—if you know which tools to use and how to ask the right questions.
-      Why Spreadsheets Remain Essential
-      Despite all the fancy dashboards available, spreadsheets are where most business data actually lives. Sales figures, inventory, budget tracking—it&#x27;s all in Excel or Google Sheets.
-      Tool Options
-      For Google Sheets: Built-in AI Features
-      C...</description>
+You don&#x27;t need to be a data scientist to get insights from spreadsheets. AI has made spreadsheet analysis dramatically more accessible—if you know which tools to use and how to ask the right questions. Why Spreadsheets Remain Essential Despite all the fancy dashboards available, spreadsheets are where most business data actually lives. Sales figures, inventory lists, budget tracking, survey results—it&#x27;s all in Excel or Google Sheets. The problem: extracting meaningful patterns often requires ski...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
-      <category>ai</category>
-      <category>spreadsheet</category>
-      <category>excel</category>
-      <category>data</category>
-      <category>analysis</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Tools</category>
+      <category>Quick</category>
+      <category>Spreadsheet</category>
+      <category>Analysis</category>
+      <category>Don</category>
+      <category>Data</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>How to Use Gemini for Daily Planning</title>
-      <link>https://vivoaihub.com/article.html?id=gemini-daily-planning</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=gemini-daily-planning</guid>
-      <description>Google&#x27;s Gemini AI is more than a chatbot—it&#x27;s a practical planning assistant if you know how to use it. Here&#x27;s how to integrate it into your daily routine.
+      <link>https://vivoaihub.com/posts_html/11-gemini-daily-planning.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/11-gemini-daily-planning.html</guid>
+      <description>Google&#x27;s Gemini AI is more than a chatbot—it&#x27;s a practical planning assistant if you know how to use it. Here&#x27;s how to integrate it into your daily routine without getting lost in endless conversation
 
-Google&#x27;s Gemini AI is more than a chatbot—it&#x27;s a practical planning assistant if you know how to use it. Here&#x27;s how to integrate it into your daily routine without getting lost in endless conversations.
-      Why Gemini Specifically?
-      Gemini connects directly to your Google workspace: Calendar, Docs, Drive, Gmail. This integration means it can actually see your commitments, not just respond to text.
-      Setting Up Your Planning Routine
-      Morning Check-In (5 minutes)
-      Ask: &quot;Based ...</description>
+Google&#x27;s Gemini AI is more than a chatbot—it&#x27;s a practical planning assistant if you know how to use it. Here&#x27;s how to integrate it into your daily routine without getting lost in endless conversations. Why Gemini Specifically? Gemini connects directly to your Google workspace: Calendar, Docs, Drive, Gmail. This integration means it can actually see your commitments, not just respond to text. If you&#x27;re already in the Google ecosystem, this matters. Setting Up Your Planning Routine Morning Check-...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <category>gemini</category>
-      <category>planning</category>
-      <category>google</category>
-      <category>ai</category>
-      <category>productivity</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Gemini</category>
+      <category>Daily</category>
+      <category>Planning</category>
+      <category>Google</category>
+      <category>Chatbot</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Free AI Grammar Check Tools for Bloggers</title>
-      <link>https://vivoaihub.com/article.html?id=free-grammar-tools</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=free-grammar-tools</guid>
-      <description>Every blogger makes typos. The difference between a polished post and an embarrassing one often comes down to proofreading. AI grammar tools solve this by seeing your text with fresh eyes.
+      <link>https://vivoaihub.com/posts_html/12-free-grammar-tools.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/12-free-grammar-tools.html</guid>
+      <description>Every blogger makes typos. The difference between a polished post and an embarrassing one often comes down to proofreading—but most bloggers are too close to their own work to catch mistakes. AI gramm
 
-Every blogger makes typos. The difference between a polished post and an embarrassing one often comes down to proofreading. AI grammar tools solve this by seeing your text with fresh eyes.
-      Why Bloggers Need Dedicated Grammar Tools
-      Your word processor&#x27;s spell-check catches obvious errors. But grammar tools catch subtle issues: sentences that run too long, passive voice overuse, inconsistent tense, awkward phrasing.
-      Top Free Options
-      1. Grammarly Free
-      Best for: General...</description>
+Every blogger makes typos. The difference between a polished post and an embarrassing one often comes down to proofreading—but most bloggers are too close to their own work to catch mistakes. AI grammar tools solve this by seeing your text with fresh eyes. Why Bloggers Need Dedicated Grammar Tools Your word processor&#x27;s spell-check catches obvious errors. But grammar tools catch the subtle issues that make writing feel amateur: Sentences that run on too long Passive voice overuse Inconsistent ten...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Sun, 04 Jan 2026 00:00:00 +0000</pubDate>
-      <category>grammar</category>
-      <category>blogging</category>
-      <category>writing</category>
-      <category>ai</category>
-      <category>free</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Free</category>
+      <category>Grammar</category>
+      <category>Check</category>
+      <category>Tools</category>
+      <category>Bloggers</category>
+      <category>Blogger</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>AI Productivity Tips for Remote Workers</title>
-      <link>https://vivoaihub.com/article.html?id=ai-remote-productivity</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-remote-productivity</guid>
-      <description>Working from home sounds easy until you&#x27;re three hours into a rabbit hole, your Slack notifications are piling up, and somehow it&#x27;s 5pm with nothing substantial to show. AI can help.
+      <link>https://vivoaihub.com/posts_html/13-ai-remote-productivity.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/13-ai-remote-productivity.html</guid>
+      <description>Working from home sounds easy until you&#x27;re three hours into a 
 
-Working from home sounds easy until you&#x27;re three hours into a &quot;quick task&quot; rabbit hole, your Slack notifications are piling up, and somehow it&#x27;s 5pm with nothing substantial to show. AI can help—you just need to know where it helps most.
-      The Remote Work Productivity Problem
-      Remote work removes the structure of an office. No one tells you when to start, when to take breaks, or when to go home. You have more autonomy, but also more decisions. AI reduces decision fatigue.
-      Where AI...</description>
+Working from home sounds easy until you&#x27;re three hours into a &quot;quick task&quot; that turned into a rabbit hole, your Slack notifications are piling up, and somehow it&#x27;s 5pm with nothing substantial to show for it. AI can help—you just need to know where it helps most. The Remote Work Productivity Problem Remote work removes the structure of an office. No one tells you when to start, when to take breaks, or when to go home. You have more autonomy, but you also have more decisions. AI reduces decision ...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
-      <category>remote</category>
-      <category>productivity</category>
-      <category>ai</category>
-      <category>work from home</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Productivity</category>
+      <category>Tips</category>
+      <category>Remote</category>
+      <category>Workers</category>
+      <category>Working</category>
+      <category>Home</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>How to Shorten Long Text with AI</title>
-      <link>https://vivoaihub.com/article.html?id=shorten-text-ai</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=shorten-text-ai</guid>
-      <description>You wrote 1,500 words. Your editor wants 800. Or your email is three paragraphs and should be one. AI excels at compression—condensing without losing the signal.
+      <link>https://vivoaihub.com/posts_html/14-shorten-text-ai.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/14-shorten-text-ai.html</guid>
+      <description>You wrote 1,500 words. Your editor wants 800. Or your summary needs to fit a slide. Or your email is three paragraphs and should be one. AI excels at compression—condensing without losing the signal. 
 
-You wrote 1,500 words. Your editor wants 800. Or your email is three paragraphs and should be one. AI excels at compression—condensing without losing the signal.
-      Why Shortening Is Harder Than Expanding
-      Anyone can add words. Padding is easy. Removing requires judgment: what&#x27;s essential? What can the reader survive without? AI can do the mechanical work, but you need to guide what stays.
-      The Three Levels of Compression
-      Light Compression (80% → 60%)
-      Cut adverbs, remove...</description>
+You wrote 1,500 words. Your editor wants 800. Or your summary needs to fit a slide. Or your email is three paragraphs and should be one. AI excels at compression—condensing without losing the signal. Why Shortening Is Harder Than Expanding Anyone can add words. Padding is easy. Removing requires judgment: what&#x27;s essential? What can the reader survive without? AI can do the mechanical work, but you need to guide what stays. The Three Levels of Compression Light Compression (80% → 60% of original)...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-      <category>writing</category>
-      <category>shorten</category>
-      <category>ai</category>
-      <category>compression</category>
-      <category>editing</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Shorten</category>
+      <category>Long</category>
+      <category>Text</category>
+      <category>Words</category>
+      <category>Editor</category>
+      <category>Wants</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Best Offline AI Tools for Low-Internet Areas</title>
-      <link>https://vivoaihub.com/article.html?id=offline-ai-tools</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=offline-ai-tools</guid>
-      <description>Good internet isn&#x27;t universal. If you&#x27;ve ever waited three minutes for a ChatGPT response on hotel WiFi, you know the frustration. Offline AI tools solve this—they run locally.
+      <link>https://vivoaihub.com/posts_html/15-offline-ai-tools.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/15-offline-ai-tools.html</guid>
+      <description>Good internet isn&#x27;t universal. If you&#x27;ve ever tried to load a webpage on a spotty connection or waited three minutes for a ChatGPT response on hotel WiFi, you know the frustration. Offline AI tools so
 
-Good internet isn&#x27;t universal. If you&#x27;ve ever tried to load a webpage on a spotty connection or waited three minutes for a ChatGPT response on hotel WiFi, you know the frustration. Offline AI tools solve this—they run locally, use no bandwidth, and work anywhere.
-      Why Offline AI Matters
-      Connection-dependent tools have a hidden cost: time spent waiting, anxiety about uploads, inability to work during outages. Offline AI removes the dependency entirely. Plus, local processing means your...</description>
+Good internet isn&#x27;t universal. If you&#x27;ve ever tried to load a webpage on a spotty connection or waited three minutes for a ChatGPT response on hotel WiFi, you know the frustration. Offline AI tools solve this—they run locally, use no bandwidth, and work anywhere. Why Offline AI Matters Connection-dependent tools have a hidden cost: time spent waiting, anxiety about uploads, inability to work during outages. Offline AI removes the dependency entirely. Plus, local processing means your data stays ...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-      <category>offline</category>
-      <category>ai</category>
-      <category>low internet</category>
-      <category>local</category>
-      <category>privacy</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Best</category>
+      <category>Offline</category>
+      <category>Tools</category>
+      <category>Low</category>
+      <category>Internet</category>
+      <category>Areas</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>How to Create Simple Outlines with AI</title>
-      <link>https://vivoaihub.com/article.html?id=ai-outlines</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-outlines</guid>
-      <description>Most people skip outlining because it feels tedious. But bad structure makes everything harder—writing, editing, and reader comprehension. AI can build outlines fast.
+      <link>https://vivoaihub.com/posts_html/16-ai-outlines.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/16-ai-outlines.html</guid>
+      <description>Most people skip outlining because it feels tedious. But here&#x27;s the truth: bad structure makes everything harder—writing, editing, and reader comprehension. AI can build outlines fast, freeing you to 
 
-Most people skip outlining because it feels tedious. But bad structure makes everything harder—writing, editing, and reader comprehension. AI can build outlines fast, freeing you to focus on the actual writing.
-      Why Outlines Matter
-      An outline isn&#x27;t about restriction. It&#x27;s about solving the structural problems before you invest time in writing. Catching that &quot;this section doesn&#x27;t flow&quot; issue costs 15 minutes in outline form versus 2 hours in draft form.
-      The Simple Outline AI Meth...</description>
+Most people skip outlining because it feels tedious. But here&#x27;s the truth: bad structure makes everything harder—writing, editing, and reader comprehension. AI can build outlines fast, freeing you to focus on the actual writing. Why Outlines Matter An outline isn&#x27;t about restriction. It&#x27;s about solving the structural problems before you invest time in writing. Catching that &quot;this section doesn&#x27;t flow&quot; issue costs you 15 minutes in outline form versus 2 hours in draft form. The Simple Outline AI ...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
-      <category>outlines</category>
-      <category>writing</category>
-      <category>ai</category>
-      <category>structure</category>
-      <category>planning</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Simple</category>
+      <category>Outlines</category>
+      <category>People</category>
+      <category>Skip</category>
+      <category>Outlining</category>
+      <category>Because</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>AI Tools to Help with Daily Journaling</title>
-      <link>https://vivoaihub.com/article.html?id=ai-journaling</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-journaling</guid>
-      <description>You know journaling is good for you. Reduced stress, clearer thinking, better self-awareness. But sitting down to write when you barely have time for lunch feels impossible. AI can lower the barrier.
+      <link>https://vivoaihub.com/posts_html/17-ai-journaling.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/17-ai-journaling.html</guid>
+      <description>You know journaling is good for you. Reduced stress, clearer thinking, better self-awareness. But sitting down to write about your feelings when you barely have time for lunch feels impossible. AI can
 
-You know journaling is good for you. Reduced stress, clearer thinking, better self-awareness. But sitting down to write when you barely have time for lunch feels impossible. AI can&#x27;t replace genuine reflection, but it can lower the barrier to starting.
-      Why People Don&#x27;t Journal Consistently
-      &quot;I don&#x27;t know what to write about.&quot; &quot;I start and it&#x27;s just rambling.&quot; &quot;I feel silly writing for myself.&quot; &quot;I don&#x27;t have time for 30-minute sessions.&quot; AI addresses the first two directly.
-      How A...</description>
+You know journaling is good for you. Reduced stress, clearer thinking, better self-awareness. But sitting down to write about your feelings when you barely have time for lunch feels impossible. AI can&#x27;t replace genuine reflection, but it can lower the barrier to starting. Why People Don&#x27;t Journal Consistently After talking to dozens of people who&#x27;ve tried and failed at journaling, the patterns are clear: &quot;I don&#x27;t know what to write about&quot; &quot;I start and it&#x27;s just rambling&quot; &quot;I feel silly writing fo...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
-      <category>journaling</category>
-      <category>ai</category>
-      <category>writing</category>
-      <category>mental health</category>
-      <category>reflection</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Tools</category>
+      <category>Daily</category>
+      <category>Journaling</category>
+      <category>Good</category>
+      <category>Reduced</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Beginner Mistakes When Using AI Tools</title>
-      <link>https://vivoaihub.com/article.html?id=ai-mistakes</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-mistakes</guid>
-      <description>AI is powerful, but it&#x27;s also easy to use badly. After watching dozens of people struggle with AI tools, I&#x27;ve noticed the same mistakes appearing over and over. Here&#x27;s how to avoid them.
+      <link>https://vivoaihub.com/posts_html/18-ai-mistakes.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/18-ai-mistakes.html</guid>
+      <description>AI is powerful, but it&#x27;s also easy to use badly. After watching dozens of people struggle with AI tools—giving up too soon or getting mediocre results—I&#x27;ve noticed the same mistakes appearing over and
 
-AI is powerful, but it&#x27;s also easy to use badly. After watching dozens of people struggle with AI tools—giving up too soon or getting mediocre results—I&#x27;ve noticed the same mistakes appearing over and over. Here&#x27;s how to avoid them.
-      Mistake 1: Asking Too Broadly
-      What it looks like: &quot;Help me with my work,&quot; &quot;Make this better,&quot; &quot;Give me ideas.&quot;
-      Why it fails: AI is a tool, not a mind reader. Vague requests get vague responses.
-      Rule: If you can&#x27;t explain what you want clearly,...</description>
+AI is powerful, but it&#x27;s also easy to use badly. After watching dozens of people struggle with AI tools—giving up too soon or getting mediocre results—I&#x27;ve noticed the same mistakes appearing over and over. Here&#x27;s how to avoid them. Mistake 1: Asking Too Broadly What it looks like: &quot;Help me with my work&quot; &quot;Make this better&quot; &quot;Give me ideas&quot; Why it fails: AI is a tool, not a mind reader. Vague requests get vague responses. What to do instead: Be specific about your context, your goal, and your cons...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
-      <category>ai</category>
-      <category>mistakes</category>
-      <category>beginners</category>
-      <category>tips</category>
-      <category>pitfalls</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Beginner</category>
+      <category>Mistakes</category>
+      <category>Tools</category>
+      <category>Powerful</category>
+      <category>Easy</category>
+      <category>Badly</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>How to Use AI for Better Time Management</title>
-      <link>https://vivoaihub.com/article.html?id=ai-time-management</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-time-management</guid>
-      <description>Time management isn&#x27;t about squeezing more into your day. It&#x27;s about making intentional choices about what gets your attention. AI can&#x27;t create more hours, but it can help you see patterns and make better decisions.
+      <link>https://vivoaihub.com/posts_html/19-ai-time-management.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/19-ai-time-management.html</guid>
+      <description>Time management isn&#x27;t about squeezing more into your day. It&#x27;s about making intentional choices about what gets your attention. AI can&#x27;t create more hours, but it can help you understand how you spend
 
-Time management isn&#x27;t about squeezing more into your day. It&#x27;s about making intentional choices about what gets your attention. AI can&#x27;t create more hours, but it can help you understand how you spend them—and make better decisions about the hours you have.
-      The Real Time Management Problem
-      Most people don&#x27;t have a time problem. They have a decision-making problem. They say yes to things they should decline, work on urgent tasks instead of important ones, don&#x27;t know where time goes, u...</description>
+Time management isn&#x27;t about squeezing more into your day. It&#x27;s about making intentional choices about what gets your attention. AI can&#x27;t create more hours, but it can help you understand how you spend them—and make better decisions about the hours you have. The Real Time Management Problem Most people don&#x27;t have a time problem. They have a decision-making problem. They say yes to things they should decline They work on urgent tasks instead of important ones They don&#x27;t know where their time actua...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate>
-      <category>time management</category>
-      <category>ai</category>
-      <category>productivity</category>
-      <category>planning</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Better</category>
+      <category>Time</category>
+      <category>Management</category>
+      <category>Isn</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Free AI Video Script Generator Tips</title>
-      <link>https://vivoaihub.com/article.html?id=ai-video-scripts</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=ai-video-scripts</guid>
-      <description>You need to make a video. You&#x27;ve got the idea, maybe even the footage. But the script? You&#x27;re staring at a blank document for 30 minutes. AI can help you write video scripts faster.
+      <link>https://vivoaihub.com/posts_html/20-ai-video-scripts.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/20-ai-video-scripts.html</guid>
+      <description>You need to make a video. You&#x27;ve got the idea, maybe even the footage. But the script? You&#x27;re staring at a blank document for 30 minutes before giving up and hoping the camera will figure it out out. 
 
-You need to make a video. You&#x27;ve got the idea, maybe even the footage. But the script? You&#x27;re staring at a blank document for 30 minutes before giving up and hoping the camera will figure it out. It won&#x27;t. AI can help you write video scripts faster—if you know how to use it.
-      Why Video Scripts Matter
-      Skipping the script feels efficient. You&#x27;re wrong. Without a script: videos ramble and lose viewers, key points get missed, you waste time doing multiple takes, editing takes three times ...</description>
+You need to make a video. You&#x27;ve got the idea, maybe even the footage. But the script? You&#x27;re staring at a blank document for 30 minutes before giving up and hoping the camera will figure it out out. It won&#x27;t. AI can help you write video scripts faster—if you know how to use it. Why Video Scripts Matter Skipping the script feels efficient. You&#x27;re wrong. Without a script: Videos ramble and lose viewers Key points get missed You waste time doing multiple takes Editing takes three times longer A 60...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
-      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
-      <category>video</category>
-      <category>script</category>
-      <category>ai</category>
-      <category>creative</category>
-      <category>youtube</category>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <category>Free</category>
+      <category>Video</category>
+      <category>Script</category>
+      <category>Generator</category>
+      <category>Tips</category>
       <source url="https://vivoaihub.com/rss.xml">AI Productivity</source>
     </item>
     <item>
       <title>Getting Started with Static Websites in 2024</title>
-      <link>https://vivoaihub.com/article.html?id=getting-started-with-static-sites</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=getting-started-with-static-sites</guid>
+      <link>https://vivoaihub.com/posts_html/getting-started-with-static-sites.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/getting-started-with-static-sites.html</guid>
       <description>Static websites are faster, more secure, and easier to maintain. Learn why many developers are switching from dynamic CMS platforms.
 
-Static websites have made a remarkable comeback in recent years. While dynamic content management systems dominated the web for years, many developers and businesses are now recognizing the numerous advantages of going static.
-      Why Choose Static?
-      The benefits of static websites extend far beyond their simplicity. Here&#x27;s why they&#x27;re gaining popularity:
-      
-        Lightning Fast: No database queries mean instant page loads
-        Highly Secure: No dynamic code execution reduces att...</description>
+Static websites have made a remarkable comeback in recent years. While dynamic content management systems dominated the web for years, many developers and businesses are now recognizing the numerous advantages of going static. Why Choose Static? The benefits of static websites extend far beyond their simplicity. Here&#x27;s why they&#x27;re gaining popularity: Lightning Fast: No database queries mean instant page loads Highly Secure: No dynamic code execution reduces attack surfaces Cost Effective: Host a...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
       <category>static sites</category>
@@ -475,17 +409,11 @@ Static websites have made a remarkable comeback in recent years. While dynamic c
     </item>
     <item>
       <title>SEO Fundamentals Every Website Owner Should Know</title>
-      <link>https://vivoaihub.com/article.html?id=seo-fundamentals-for-websites</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=seo-fundamentals-for-websites</guid>
+      <link>https://vivoaihub.com/posts_html/seo-fundamentals-for-websites.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/seo-fundamentals-for-websites.html</guid>
       <description>Understanding search engine optimization is crucial for online visibility. Here are the key principles that drive organic traffic.
 
-Search engine optimization remains one of the most cost-effective ways to drive organic traffic to your website.
-      Core SEO Principles
-      Successful SEO rests on several pillars that work together to improve your site&#x27;s visibility.
-      1. Quality Content
-      Content remains king in SEO. Create valuable, original content that genuinely helps your audience.
-      2. Technical Excellence
-      Site speed, mobile responsiveness, clean URLs, and proper HTML structure all contribute to bett...</description>
+Search engine optimization remains one of the most cost-effective ways to drive organic traffic to your website. Core SEO Principles Successful SEO rests on several pillars that work together to improve your site&#x27;s visibility. 1. Quality Content Content remains king in SEO. Create valuable, original content that genuinely helps your audience. 2. Technical Excellence Site speed, mobile responsiveness, clean URLs, and proper HTML structure all contribute to better rankings. 3. Backlinks Matter Qua...</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
       <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
       <category>seo</category>
@@ -495,15 +423,11 @@ Search engine optimization remains one of the most cost-effective ways to drive 
     </item>
     <item>
       <title>Why Mobile-First Design Is No Longer Optional</title>
-      <link>https://vivoaihub.com/article.html?id=mobile-first-design-strategy</link>
-      <guid isPermaLink="true">https://vivoaihub.com/article.html?id=mobile-first-design-strategy</guid>
+      <link>https://vivoaihub.com/posts_html/mobile-first-design-strategy.html</link>
+      <guid isPermaLink="true">https://vivoaihub.com/posts_html/mobile-first-design-strategy.html</guid>
       <description>With mobile traffic exceeding desktop, designing for mobile first is essential. Here&#x27;s how to approach responsive design effectively.
 
-Mobile-first design isn&#x27;t just a trend—it&#x27;s a fundamental shift in how we approach web development. More than half of all web traffic now comes from mobile devices.
-      The Mobile-First Mindset
-      Starting with mobile forces you to prioritize content and functionality. When screen space is limited, every element must earn its place.
-      Implementation Tips
-      Use flexible grids and images that scale with viewport width. Implement touch-friendly tap targets (at least 44px).</description>
+Mobile-first design isn&#x27;t just a trend—it&#x27;s a fundamental shift in how we approach web development. More than half of all web traffic now comes from mobile devices. The Mobile-First Mindset Starting with mobile forces you to prioritize content and functionality. When screen space is limited, every element must earn its place. Implementation Tips Use flexible grids and images that scale with viewport width. Implement touch-friendly tap targets (at least 44px).</description>
       <author>maye@vivoaihub.com (Maye Zhang)</author>
       <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
       <category>mobile</category>

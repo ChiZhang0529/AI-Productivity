@@ -204,6 +204,8 @@ def inline(text):
     text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
     # Inline code
     text = re.sub(r'`(.+?)`', r'<code>\1</code>', text)
+    # Images
+    text = re.sub(r'!\[(.+?)\]\((.+?)\)', r'<img src="\2" alt="\1" loading="lazy" class="rounded-xl my-6 max-w-full">', text)
     # Links
     text = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', text)
     return text
@@ -241,16 +243,26 @@ POST_TEMPLATE = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1514951008240422" crossorigin="anonymous"></script>
   <title>__TITLE__ | AI Productivity</title>
   <meta name="title" content="__TITLE__ | AI Productivity">
   <meta name="description" content="__EXCERPT__">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vivoaihub.com/posts_html/__FILENAME__">
   <meta property="og:type" content="article">
   <meta property="og:title" content="__TITLE__">
   <meta property="og:description" content="__EXCERPT__">
+  <meta property="og:image" content="https://vivoaihub.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="__TITLE__">
   <meta property="twitter:description" content="__EXCERPT__">
+  <meta property="twitter:image" content="https://vivoaihub.com/og-image.jpg">
+  <meta property="twitter:image:width" content="1200">
+  <meta property="twitter:image:height" content="630">
+  <meta property="article:section" content="__CATEGORY__">
+__ARTICLE_TAG_META__
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -270,8 +282,66 @@ POST_TEMPLATE = """<!DOCTYPE html>
     }
   </script>
   <style>
+    /* === Theme System === */
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111118;
+      --bg-card: #1a1a24;
+      --bg-elevated: #22222e;
+      --text-primary: #e2e8f0;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border-default: rgba(255,255,255,0.05);
+      --border-subtle: rgba(255,255,255,0.08);
+      --accent: #0e8de8;
+      --accent-light: #7dd3fc;
+      --accent-glow: rgba(14,141,232,0.3);
+      --pre-bg: #0d0d14;
+    }
+    
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-elevated: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border-default: rgba(0,0,0,0.08);
+      --border-subtle: rgba(0,0,0,0.05);
+      --pre-bg: #e2e8f0;
+    }
+    
+    /* Light mode overrides for Tailwind utilities */
+    [data-theme="light"] .bg-dark-900\\/80 { background: rgba(248,250,252,0.85) !important; }
+    [data-theme="light"] .border-white\\/5 { border-color: rgba(0,0,0,0.06) !important; }
+    [data-theme="light"] .bg-dark-800\\/40 { background: rgba(255,255,255,0.8) !important; }
+    [data-theme="light"] .bg-dark-800\\/60 { background: rgba(255,255,255,0.8) !important; }
+    [data-theme="light"] .bg-dark-700 { background: #f1f5f9 !important; }
+    [data-theme="light"] .bg-dark-600 { background: #e2e8f0 !important; }
+    [data-theme="light"] .text-white { color: #0f172a !important; }
+    [data-theme="light"] .text-gray-400 { color: #475569 !important; }
+    [data-theme="light"] .text-gray-500 { color: #64748b !important; }
+    [data-theme="light"] .text-gray-600 { color: #94a3b8 !important; }
+    [data-theme="light"] .hover\\:text-white:hover { color: #0f172a !important; }
+    [data-theme="light"] .hover\\:bg-white\\/5:hover { background: rgba(0,0,0,0.05) !important; }
+    [data-theme="light"] .backdrop-blur-xl { backdrop-filter: blur(24px); }
+    [data-theme="light"] .bg-dark-800 { background: #ffffff !important; }
+    [data-theme="light"] .border-brand-500\\/20 { border-color: rgba(14,141,232,0.3) !important; }
+    [data-theme="light"] .shadow-brand-500\\/20 { box-shadow: 0 1px 2px rgba(14,141,232,0.15) !important; }
+    [data-theme="light"] .tag-pill { background: rgba(14,141,232,0.08); color: #0369a1; border-color: rgba(14,141,232,0.15); }
+    [data-theme="light"] .share-btn { background: #f1f5f9; color: #64748b; border-color: #e2e8f0; }
+    [data-theme="light"] .share-btn:hover { background: #e2e8f0; color: #0f172a; }
+    [data-theme="light"] .newsletter-input { background: #ffffff; border-color: #e2e8f0; color: #0f172a; }
+    [data-theme="light"] .newsletter-input::placeholder { color: #94a3b8; }
+    [data-theme="light"] .newsletter-input:focus { border-color: #0e8de8; background: #ffffff; box-shadow: 0 0 0 3px rgba(14,141,232,0.1); }
+    [data-theme="light"] .category-badge.bg-brand-500\\/10 { background: rgba(14,141,232,0.08) !important; }
+    [data-theme="light"] .bg-dark-900\\/80 { background: rgba(248,250,252,0.9) !important; }
+    
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; background-color: #0a0a0f; color: #e2e8f0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--bg-primary); color: var(--text-primary); }
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #111118; }
     ::-webkit-scrollbar-thumb { background: #333344; border-radius: 4px; }
@@ -307,6 +377,19 @@ POST_TEMPLATE = """<!DOCTYPE html>
     .card-glow:hover { box-shadow: 0 0 40px rgba(14,141,232,0.08), 0 4px 20px rgba(0,0,0,0.4); }
     .hero-gradient { background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14,141,232,0.15), transparent); }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "__TITLE__",
+    "description": "__EXCERPT__",
+    "image": "https://vivoaihub.com/og-image.jpg",
+    "datePublished": "__DATE__",
+    "author": {"@type": "Person", "name": "Maye Zhang"},
+    "publisher": {"@type": "Organization", "name": "AI Productivity", "logo": {"@type": "ImageObject", "url": "https://vivoaihub.com/og-image.jpg"}},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://vivoaihub.com/posts_html/__FILENAME__"}
+  }
+  </script>
 </head>
 <body class="font-sans antialiased min-h-screen flex flex-col">
 
@@ -323,6 +406,10 @@ POST_TEMPLATE = """<!DOCTYPE html>
           <a href="blog.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">Blog</a>
           <a href="about.html" class="px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all">About</a>
           <a href="contact.html" class="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-lg" style="box-shadow: 0 0 20px rgba(0,112,196,0.3);">Contact</a>
+          <button id="theme-toggle" class="ml-1 p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all" aria-label="Toggle theme" title="Toggle light/dark mode">
+            <svg id="theme-icon-dark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            <svg id="theme-icon-light" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </button>
         </div>
         <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -461,13 +548,47 @@ __TAGS__
         </div>
       </div>
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-gray-600">© 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">© 2026 AI Productivity. All rights reserved.</p>
         <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // === Theme Toggle ===
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+    
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      if (next === 'light') {
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        document.getElementById('theme-icon-dark').classList.add('hidden');
+        document.getElementById('theme-icon-light').classList.remove('hidden');
+      } else {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        document.getElementById('theme-icon-dark').classList.remove('hidden');
+        document.getElementById('theme-icon-light').classList.add('hidden');
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.getElementById('theme-icon-dark').classList.add('hidden');
+        document.getElementById('theme-icon-light').classList.remove('hidden');
+      }
+      document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    });
+    
     // Mobile menu
     document.getElementById('mobile-menu-btn').addEventListener('click', function() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
@@ -512,6 +633,7 @@ __TAGS__
 
 def make_html(title, excerpt, cat, tags, body, fname, date_str):
     tag_html = '\n'.join(f'          <span class="tag-pill">{t}</span>' for t in tags)
+    article_tag_meta = '\n'.join(f'  <meta property="article:tag" content="{t}">' for t in tags)
     
     word_count = len(body.split())
     read_time = max(1, word_count // 200)
@@ -529,6 +651,7 @@ def make_html(title, excerpt, cat, tags, body, fname, date_str):
     result = result.replace('__READTIME__', str(read_time))
     result = result.replace('__FILENAME__', fname)
     result = result.replace('__TITLE_URL__', title)
+    result = result.replace('__ARTICLE_TAG_META__', article_tag_meta)
     return result
 
 def process_posts():

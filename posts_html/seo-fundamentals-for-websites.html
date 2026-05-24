@@ -18,12 +18,51 @@
   <meta name="twitter:description" content="Understanding search engine optimization is crucial for online visibility. Here are the key principles that drive organic traffic.">
   <meta name="twitter:image" content="https://vivoaihub.com/og-image.jpg">
   <link rel="canonical" href="https://vivoaihub.com/posts_html/seo-fundamentals-for-websites.html">
+  <meta property="article:section" content="SEO">
+  <meta property="article:tag" content="seo">
+  <meta property="article:tag" content="marketing">
+  <meta property="article:tag" content="traffic">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1514951008240422" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
+
+    // === Theme Toggle ===
+    (function() {
+      const saved = localStorage.getItem("theme");
+      if (saved === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+    
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      if (next === "light") {
+        html.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+        document.getElementById("theme-icon-dark").classList.add("hidden");
+        document.getElementById("theme-icon-light").classList.remove("hidden");
+      } else {
+        html.removeAttribute("data-theme");
+        localStorage.setItem("theme", "dark");
+        document.getElementById("theme-icon-dark").classList.remove("hidden");
+        document.getElementById("theme-icon-light").classList.add("hidden");
+      }
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("theme");
+      if (saved === "light") {
+        document.getElementById("theme-icon-dark").classList.add("hidden");
+        document.getElementById("theme-icon-light").classList.remove("hidden");
+      }
+      document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+    });
+    
     tailwind.config = {
       theme: {
         extend: {
@@ -37,6 +76,64 @@
     }
   </script>
   <style>
+    /* === Theme System === */
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111118;
+      --bg-card: #1a1a24;
+      --bg-elevated: #22222e;
+      --text-primary: #e2e8f0;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border-default: rgba(255,255,255,0.05);
+      --border-subtle: rgba(255,255,255,0.08);
+      --accent: #0e8de8;
+      --accent-light: #7dd3fc;
+      --accent-glow: rgba(14,141,232,0.3);
+      --pre-bg: #0d0d14;
+    }
+    
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-elevated: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border-default: rgba(0,0,0,0.08);
+      --border-subtle: rgba(0,0,0,0.05);
+      --pre-bg: #e2e8f0;
+    }
+    
+    /* Light mode overrides for Tailwind utilities */
+    [data-theme="light"] .bg-dark-900\/80 { background: rgba(248,250,252,0.85) !important; }
+    [data-theme="light"] .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
+    [data-theme="light"] .bg-dark-800\/40 { background: rgba(255,255,255,0.8) !important; }
+    [data-theme="light"] .bg-dark-800\/60 { background: rgba(255,255,255,0.8) !important; }
+    [data-theme="light"] .bg-dark-700 { background: #f1f5f9 !important; }
+    [data-theme="light"] .bg-dark-600 { background: #e2e8f0 !important; }
+    [data-theme="light"] .text-white { color: #0f172a !important; }
+    [data-theme="light"] .text-gray-400 { color: #475569 !important; }
+    [data-theme="light"] .text-gray-500 { color: #64748b !important; }
+    [data-theme="light"] .text-gray-600 { color: #94a3b8 !important; }
+    [data-theme="light"] .hover\:text-white:hover { color: #0f172a !important; }
+    [data-theme="light"] .hover\:bg-white\/5:hover { background: rgba(0,0,0,0.05) !important; }
+    [data-theme="light"] .backdrop-blur-xl { backdrop-filter: blur(24px); }
+    [data-theme="light"] .bg-dark-800 { background: #ffffff !important; }
+    [data-theme="light"] .border-brand-500\/20 { border-color: rgba(14,141,232,0.3) !important; }
+    [data-theme="light"] .shadow-brand-500\/20 { box-shadow: 0 1px 2px rgba(14,141,232,0.15) !important; }
+    [data-theme="light"] .tag-pill { background: rgba(14,141,232,0.08); color: #0369a1; border-color: rgba(14,141,232,0.15); }
+    [data-theme="light"] .share-btn { background: #f1f5f9; color: #64748b; border-color: #e2e8f0; }
+    [data-theme="light"] .share-btn:hover { background: #e2e8f0; color: #0f172a; }
+    [data-theme="light"] .newsletter-input { background: #ffffff; border-color: #e2e8f0; color: #0f172a; }
+    [data-theme="light"] .newsletter-input::placeholder { color: #94a3b8; }
+    [data-theme="light"] .newsletter-input:focus { border-color: #0e8de8; background: #ffffff; box-shadow: 0 0 0 3px rgba(14,141,232,0.1); }
+    [data-theme="light"] .category-badge.bg-brand-500\/10 { background: rgba(14,141,232,0.08) !important; }
+    [data-theme="light"] .bg-dark-900\/80 { background: rgba(248,250,252,0.9) !important; }
+    
     body { background-color: #0a0a0f; color: #e2e8f0; }
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #0d0d14; }
@@ -72,6 +169,19 @@
     .prose td { border: 1px solid #2a2a38; padding: 0.625rem 1rem; color: #cbd5e1; }
     .prose tr:nth-child(even) { background: #0f0f18; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SEO Fundamentals Every Website Owner Should Know",
+    "description": "Understanding search engine optimization is crucial for online visibility. Here are the key principles that drive organic traffic.",
+    "image": "https://vivoaihub.com/og-image.jpg",
+    "datePublished": "2024-01-10",
+    "author": {"@type": "Person", "name": "Maye Zhang"},
+    "publisher": {"@type": "Organization", "name": "AI Productivity", "logo": {"@type": "ImageObject", "url": "https://vivoaihub.com/og-image.jpg"}},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://vivoaihub.com/posts_html/seo-fundamentals-for-websites.html"}
+  }
+  </script>
 </head>
 <body class="font-sans antialiased min-h-screen flex flex-col">
 
@@ -236,7 +346,7 @@
         </div>
       </div>
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-gray-600">&copy; 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">&copy; 2026 AI Productivity. All rights reserved.</p>
         <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
       </div>
     </div>

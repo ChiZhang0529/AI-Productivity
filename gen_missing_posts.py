@@ -240,7 +240,7 @@ __TAGS__
         </div>
       </div>
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-gray-600">&copy; 2025 AI Productivity. All rights reserved.</p>
+        <p class="text-xs text-gray-600">&copy; 2026 AI Productivity. All rights reserved.</p>
         <p class="text-xs text-gray-600">Built with AI. Powered by curiosity.</p>
       </div>
     </div>
