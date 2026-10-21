@@ -9,3 +9,9 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Local build artifacts / scratch files
+index-screenshot.png
+package.json
+package-lock.json
+node_modules/
