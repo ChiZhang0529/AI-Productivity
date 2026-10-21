@@ -56,366 +56,12 @@
       }
     }
   </script>
-
-  <style>
-    :root {
-      --canvas: #F4F4F5;
-      --ink: #111111;
-      --lime: #C8F542;
-      --mute: #6B6B6B;
-      --line: #E4E4E7;
-      --panel: #0A0A0A;
-    }
-
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .marquee-track { animation: none !important; }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    body {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      background: var(--canvas);
-      color: var(--ink);
-      overflow-x: hidden;
-    }
-
-    .font-display { font-family: 'Syne', sans-serif; }
-
-    /* scroll progress */
-    .scroll-progress {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--lime);
-      transform-origin: left center;
-      transform: scaleX(0);
-      z-index: 100;
-      will-change: transform;
-    }
-
-    /* nav */
-    [data-nav] {
-      transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      border-bottom: 1px solid transparent;
-    }
-    [data-nav].is-scrolled {
-      background: rgba(244, 244, 245, 0.85);
-      backdrop-filter: blur(16px);
-      border-color: var(--line);
-    }
-
-    /* hero */
-    .hero {
-      min-height: 100svh;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 7rem 0 3.5rem;
-      isolation: isolate;
-    }
-    .hero-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .hero-noise {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      opacity: 0.04;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 72rem;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.75rem, 9.5vw, 7.5rem);
-      line-height: 0.92;
-      letter-spacing: -0.045em;
-      font-weight: 800;
-      max-width: 100%;
-      overflow-wrap: anywhere;
-    }
-
-    /* word stagger */
-    .word-wrap {
-      display: inline-block;
-      overflow: hidden;
-      vertical-align: bottom;
-      padding-bottom: 0.08em;
-      margin-bottom: -0.08em;
-    }
-    .word {
-      display: inline-block;
-      transform: translateY(110%);
-      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-      transition-delay: calc(var(--i, 0) * 55ms + 120ms);
-    }
-    [data-split-words].is-ready .word { transform: translateY(0); }
-
-    .hero-sub, .hero-cta, .hero-visual {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .hero-sub { transition-delay: 0.45s; }
-    .hero-cta { transition-delay: 0.55s; }
-    .hero-visual { transition-delay: 0.35s; }
-    [data-hero].is-ready .hero-sub,
-    [data-hero].is-ready .hero-cta,
-    [data-hero].is-ready .hero-visual {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .cta-lime {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--lime);
-      color: var(--ink);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.95rem 1.5rem;
-      border-radius: 0.75rem;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .cta-lime:hover { background: #d4ff5c; }
-    .cta-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 500;
-      color: var(--ink);
-      padding: 0.95rem 0.75rem;
-      transition: opacity 0.2s;
-    }
-    .cta-ghost:hover { opacity: 0.65; }
-
-    /* showcase visual (dominant hero plane — not a marketing card stack) */
-    .hero-stage {
-      margin-top: 2.5rem;
-      width: 100%;
-      aspect-ratio: 16 / 7;
-      max-height: 340px;
-      border-radius: 1.25rem;
-      background: var(--panel);
-      position: relative;
-      overflow: hidden;
-      border: 1px solid #222;
-    }
-    .hero-stage-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(200,245,66,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,245,66,0.07) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
-    }
-    .hero-stage-orb {
-      position: absolute;
-      width: 42%;
-      height: 70%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 40% 60% 55% 45%;
-      background: radial-gradient(circle at 35% 35%, #C8F542 0%, transparent 55%),
-                  radial-gradient(circle at 70% 60%, #fff 0%, transparent 40%);
-      opacity: 0.55;
-      filter: blur(2px);
-      animation: morph 8s ease-in-out infinite;
-    }
-    @keyframes morph {
-      0%, 100% { border-radius: 40% 60% 55% 45%; transform: translate(-50%, -50%) rotate(0deg) scale(1); }
-      50% { border-radius: 60% 40% 45% 55%; transform: translate(-50%, -50%) rotate(8deg) scale(1.06); }
-    }
-    .hero-stage-label {
-      position: absolute;
-      left: 1.25rem;
-      bottom: 1.25rem;
-      color: #aaa;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .hero-stage-live {
-      position: absolute;
-      right: 1.25rem;
-      top: 1.25rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--lime);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .hero-stage-live::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--lime);
-      animation: blink 1.4s ease infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.25; }
-    }
-
-    /* marquee */
-    .marquee {
-      overflow: hidden;
-      border-block: 1px solid var(--line);
-      background: #fff;
-      padding: 0.9rem 0;
-    }
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      gap: 2.5rem;
-      animation: marquee 28s linear infinite;
-    }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    .marquee-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      white-space: nowrap;
-      color: var(--ink);
-    }
-    .marquee-dot {
-      width: 0.45rem; height: 0.45rem;
-      background: var(--lime);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-
-    /* reveals */
-    [data-reveal] {
-      opacity: 0;
-      transform: translateY(32px);
-      filter: blur(4px);
-      transition:
-        opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-        filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-      transition-delay: var(--d, 0ms);
-    }
-    [data-reveal].is-in {
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    /* feature / article panels — interactive surfaces */
-    .tilt-panel {
-      background: var(--panel);
-      color: #f5f5f5;
-      border-radius: 1.25rem;
-      padding: 1.75rem;
-      border: 1px solid #1f1f1f;
-      transition: transform 0.25s ease, border-color 0.25s ease;
-      transform-style: preserve-3d;
-      position: relative;
-      overflow: hidden;
-      will-change: transform;
-    }
-    .tilt-panel::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(200,245,66,0.12), transparent 40%);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .tilt-panel:hover::after { opacity: 1; }
-    .tilt-panel:hover { border-color: #333; }
-
-    .article-panel {
-      display: flex;
-      flex-direction: column;
-      min-height: 280px;
-      text-decoration: none;
-      color: inherit;
-    }
-    .article-panel h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin-top: auto;
-      transition: color 0.2s;
-    }
-    .article-panel:hover h3 { color: var(--lime); }
-
-    .section-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mute);
-      margin-bottom: 0.75rem;
-    }
-    .section-kicker::before {
-      content: '';
-      width: 8px; height: 8px;
-      background: var(--lime);
-      border-radius: 2px;
-    }
-
-    .game-shell {
-      background: var(--panel);
-      border: 1px solid #222;
-      border-radius: 1.25rem;
-      overflow: hidden;
-    }
-
-    kbd {
-      padding: 0.1rem 0.4rem;
-      border-radius: 0.25rem;
-      background: #222;
-      color: #ccc;
-      font-size: 0.7rem;
-    }
-
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--canvas); }
-    ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-  </style>
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
   <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+  <div class="page-spotlight" data-spotlight aria-hidden="true"></div>
 
   <header data-nav class="fixed top-0 inset-x-0 z-50">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -477,23 +123,38 @@
         <div class="hero-visual hero-stage" aria-hidden="true">
           <div class="hero-stage-grid"></div>
           <div class="hero-stage-orb"></div>
+          <canvas class="hero-stage-wave" data-stage-wave></canvas>
           <span class="hero-stage-live">Live motion</span>
           <span class="hero-stage-label">Signal · Focus · Ship</span>
         </div>
       </div>
     </section>
 
-    <!-- Infinite topic marquee -->
-    <div class="marquee" data-marquee aria-hidden="true">
-      <div class="marquee-track" data-marquee-track>
-        <span class="marquee-item"><span class="marquee-dot"></span>ChatGPT workflows</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Prompt craft</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Automation</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Note taking</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Email writing</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Study systems</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>Remote productivity</span>
-        <span class="marquee-item"><span class="marquee-dot"></span>AI tools</span>
+    <!-- Dual marquees -->
+    <div class="marquee-stack" aria-hidden="true">
+      <div class="marquee" data-marquee>
+        <div class="marquee-track" data-marquee-track>
+          <span class="marquee-item"><span class="marquee-dot"></span>ChatGPT workflows</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Prompt craft</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Automation</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Note taking</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Email writing</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Study systems</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Remote productivity</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>AI tools</span>
+        </div>
+      </div>
+      <div class="marquee" data-marquee>
+        <div class="marquee-track reverse" data-marquee-track>
+          <span class="marquee-item"><span class="marquee-dot"></span>Ship faster</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Less fluff</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>More signal</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Human prompts</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Daily drops</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Workflow OS</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>Focus mode</span>
+          <span class="marquee-item"><span class="marquee-dot"></span>10× output</span>
+        </div>
       </div>
     </div>
 
@@ -508,19 +169,19 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-5">
-          <div class="tilt-panel" data-tilt="7" data-reveal style="--d:40ms">
-            <p class="text-lime text-xs font-semibold tracking-widest uppercase mb-6">01</p>
-            <h3 class="font-display text-2xl font-bold mb-3 tracking-tight">Cut the noise</h3>
+          <div class="tilt-panel" data-tilt="10" data-reveal style="--d:40ms">
+            <p class="text-lime text-xs font-semibold tracking-widest uppercase mb-6" data-scramble>01 — FOCUS</p>
+            <h3 class="font-display text-2xl font-bold mb-3 tracking-tight" data-scramble>Cut the noise</h3>
             <p class="text-sm text-zinc-400 leading-relaxed">Every piece is filtered for one job: reclaim hours with AI — not drown in tool spam.</p>
           </div>
-          <div class="tilt-panel" data-tilt="7" data-reveal style="--d:100ms">
-            <p class="text-lime text-xs font-semibold tracking-widest uppercase mb-6">02</p>
-            <h3 class="font-display text-2xl font-bold mb-3 tracking-tight">Automate the loop</h3>
+          <div class="tilt-panel" data-tilt="10" data-reveal style="--d:100ms">
+            <p class="text-lime text-xs font-semibold tracking-widest uppercase mb-6" data-scramble>02 — FLOW</p>
+            <h3 class="font-display text-2xl font-bold mb-3 tracking-tight" data-scramble>Automate the loop</h3>
             <p class="text-sm text-zinc-400 leading-relaxed">Copy-ready patterns for email, notes, planning — systems that run while you ship.</p>
           </div>
-          <div class="tilt-panel" data-tilt="7" data-reveal style="--d:160ms">
-            <p class="text-lime text-xs font-semibold tracking-widest uppercase mb-6">03</p>
-            <h3 class="font-display text-2xl font-bold mb-3 tracking-tight">Sound human</h3>
+          <div class="tilt-panel" data-tilt="10" data-reveal style="--d:160ms">
+            <p class="text-lime text-xs font-semibold tracking-widest uppercase mb-6" data-scramble>03 — CRAFT</p>
+            <h3 class="font-display text-2xl font-bold mb-3 tracking-tight" data-scramble>Sound human</h3>
             <p class="text-sm text-zinc-400 leading-relaxed">Prompts with taste. Write and create at machine speed without the robotic leftovers.</p>
           </div>
         </div>
@@ -659,6 +320,7 @@
   </footer>
 
   <script src="js/articles.js"></script>
+  <script src="js/ui.js"></script>
   <script src="js/motion.js"></script>
   <script>
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -707,20 +369,8 @@
           </a>
         </div>
       `;
-      // re-bind tilt for dynamically inserted panels
-      if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        container.querySelectorAll('[data-tilt]').forEach((card) => {
-          const max = parseFloat(card.getAttribute('data-tilt') || '8');
-          card.addEventListener('pointermove', (e) => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width - 0.5;
-            const y = (e.clientY - r.top) / r.height - 0.5;
-            card.style.transform = `perspective(900px) rotateY(${x * max}deg) rotateX(${-y * max}deg) translateY(-4px)`;
-            card.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
-            card.style.setProperty('--my', `${(y + 0.5) * 100}%`);
-          });
-          card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-        });
+      if (typeof window.bindTiltCard === 'function') {
+        container.querySelectorAll('[data-tilt]').forEach(window.bindTiltCard);
       }
     } else {
       container.innerHTML = '<p class="text-mute py-16 text-center md:col-span-3">No articles yet. Check back soon!</p>';
